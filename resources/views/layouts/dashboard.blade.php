@@ -12,18 +12,28 @@
     <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
 </head>
 
+<?php
+if (is_string($errors)) {
+    $error = $errors;
+} else {
+    $error = '';
+    foreach ($errors->all() as $error) {
+        $error .= "{$error}; ";
+    }
+}
+
+if (empty($error)) {
+    unset($error);
+}
+?>
 
 <body>
     <div id="app">
-        {{-- @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif --}}
+        @if (isset($error))
+            <script>
+                alert('{{ $error }}')
+            </script>
+        @endif
         @include('components.sidebar')
         <div id="main">
             @include('components.navbar')

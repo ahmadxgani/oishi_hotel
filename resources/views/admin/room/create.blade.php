@@ -7,7 +7,8 @@
         </div>
         <div class="card-content">
             <div class="card-body">
-                <form class="form form-horizontal" action="{{ route('admin.room.store') }}" method="POST">
+                <form class="form form-horizontal" action="{{ route('admin.room.store') }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="form-body">
                         <div class="row">
@@ -35,6 +36,10 @@
                                         @endforeach
                                     </select>
                                 </fieldset>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="file" name="photos[]">
+                                <input type="file" name="photos[]">
                             </div>
                             <div class="col-sm-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
