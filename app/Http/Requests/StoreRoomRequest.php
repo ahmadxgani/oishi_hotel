@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreRoomRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class StoreRoomRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return Auth::user()->role === 'admin';
     }
 
     /**
@@ -22,7 +23,9 @@ class StoreRoomRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'no_room'           => 'required|unique:rooms|integer',
+            'publish_rate'      => 'required|integer',
+            'type'              => 'required|in:Deluxe,SuperiorKing,SuperiorTwin'
         ];
     }
 }

@@ -21,15 +21,21 @@ class RoomController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.room.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRoomRequest $request)
+    public function store(StoreRoomRequest $r)
     {
-        //
+        Room::create([
+            'no_room'           => $r->no_room,
+            'publish_rate'      => $r->publish_rate,
+            'type'              => $r->type,
+        ]);
+
+        return redirect()->route('admin.room.index');
     }
 
     /**
