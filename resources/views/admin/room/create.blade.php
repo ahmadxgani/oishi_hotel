@@ -18,7 +18,7 @@
                                 <input required type="text" id="no_room" class="form-control" name="no_room">
                             </div>
                             <div class="col-md-4">
-                                <label for="publish_rate">Price per night</label>
+                                <label for="publish_rate">Publish Rate</label>
                             </div>
                             <div class="col-md-8 form-group">
                                 <input required type="number" id="publish_rate" class="form-control" name="publish_rate">

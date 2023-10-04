@@ -45,7 +45,13 @@
                                     <td>{{ $r->updated_at }}</td>
                                     <td>
                                         <a href="{{ route('admin.room.edit', $r->id) }}" class="btn btn-primary">Edit</a>
-                                        <a href="#" class="btn btn-danger">Delete</a>
+                                        <form action="{{ route('admin.room.destroy', $r->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+
                                     </td>
                                 </tr>
                             @endforeach
