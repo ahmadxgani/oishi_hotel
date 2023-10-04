@@ -9,4 +9,15 @@ class Room extends Model
 {
     use HasFactory;
     public $fillable = ['no_room', 'publish_rate', 'type'];
+
+    public const TYPE_MAP = [
+        "SuperiorKing"  => "Superior King",
+        "Delux"         => "Delux",
+        "SuperiorTwin"  => "Superior Twin"
+    ];
+
+    public function type()
+    {
+        return self::TYPE_MAP[$this->type];
+    }
 }

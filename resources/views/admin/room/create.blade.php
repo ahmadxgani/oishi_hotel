@@ -30,9 +30,9 @@
                                 <fieldset class="form-group">
                                     <select class="form-select" id="type" name="type" required>
                                         <option value="">Select room type</option>
-                                        <option value="Deluxe">Deluxe</option>
-                                        <option value="SuperiorKing">Superior King</option>
-                                        <option value="SuperiorTwin">Superior Twin</option>
+                                        @foreach (\App\Models\Room::TYPE_MAP as $type => $name)
+                                            <option value="{{ $type }}">{{ $name }}</option>
+                                        @endforeach
                                     </select>
                                 </fieldset>
                             </div>
