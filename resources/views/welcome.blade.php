@@ -1,44 +1,37 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme="dark">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Home page</title>
+
+    <!-- Scripts -->
+    @vite(['resources/css/feature.css', 'resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
-<!-- Scripts -->
-@vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
-
 <body>
-    <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{{ asset('/images/item_2.jpg') }}" class="d-block w-100" alt="Banner"
-                    style="height: 350px;object-fit: cover">
-            </div>
-            <div class="carousel-item">
-                <img src="{{ asset('/images/item_2.jpg') }}" class="d-block w-100" alt="Banner"
-                    style="height: 350px;object-fit: cover">
-            </div>
-            <div class="carousel-item">
-                <img src="{{ asset('/images/item_2.jpg') }}" class="d-block w-100" alt="Banner"
-                    style="height: 350px;object-fit: cover">
+    <div class="container">
+        <div class="p-3 mb-1 bg-body-tertiary rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Oishi Hotel</h1>
+                <div class="row justify-content-between">
+                    <p class="col-md-8 fs-4">
+                        The perfect place to stay for lovers of Japanese culture and entertainment, especially those who
+                        are "wibu." With a very seductive design and a theme centered on everything
+                        related to anime, manga, and Japanese pop culture, Oishi Hotel will make you feel like you're in
+                        the world of your favorite anime.
+                    </p>
+
+                    <div class="col d-flex flex-column">
+                        <img src="{{ asset('/images/logo.png') }}" class="align-self-end"
+                            style="width: 120px;height: 120px;" />
+                    </div>
+                </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <div class="container">
         @include('components.feature')
-        @include('components.about')
     </div>
 </body>
 
