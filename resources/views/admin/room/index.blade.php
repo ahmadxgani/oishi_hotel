@@ -44,7 +44,7 @@
                                     <td>{{ $r->created_at }}</td>
                                     <td>{{ $r->updated_at }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-primary">Edit</a>
+                                        <a href="{{ route('admin.room.edit', $r->id) }}" class="btn btn-primary">Edit</a>
                                         <a href="#" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>

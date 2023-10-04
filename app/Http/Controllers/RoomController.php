@@ -53,15 +53,20 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-        //
+        return view('admin.room.edit', compact('room'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRoomRequest $request, Room $room)
+    public function update(UpdateRoomRequest $r, Room $room)
     {
-        //
+        $room->update([
+            'publish_rate'      => $r->publish_rate,
+            'type'              => $r->type,
+        ]);
+
+        return redirect()->route('admin.room.index');
     }
 
     /**
