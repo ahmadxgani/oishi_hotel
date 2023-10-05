@@ -7,7 +7,10 @@ Todo:
 
 -   add an ability to delete and add photo on the edit page
 -   add detail room page contain related information about room
--   clear unused menu in sidebar
+    -   display as card
+    -   add [overlay](https://imagekit.io/blog/css-image-overlay/) container for handle preview images (?)
+    -   like traveloka does, [codepen reference](https://codepen.io/phillipharding/pen/QQGxWq)
+-   clear unused menu in sidebar [done]
 -   pagination and search room's table
 -   notification feedback on success or error
 
@@ -35,8 +38,8 @@ Flow reserve room:
 
 -   user fill data form
 -   print ticket
--   bawa ke hotel :v
--   serahkan ke resepsionis :v
+-   accept digital ticket as evidence of reservation to receptionist
+    (serahkan ke resepsionis :v)
 -   check/validasi ticket :v
 -   selesai (?)
 

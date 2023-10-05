@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <div class="float-end">
-                        <a href="{{ route('admin.room.create') }}" class="btn btn-primary">Add Room</a>
+                        <a href="{{ route('admin.room.create') }}" class="btn btn-primary">Add Room <i data-feather="plus"></i></a>
                     </div>
                 </div>
             </div>
@@ -44,13 +44,22 @@
                                     <td>{{ $r->created_at }}</td>
                                     <td>{{ $r->updated_at }}</td>
                                     <td>
-                                        <a href="{{ route('admin.room.edit', $r->id) }}" class="btn btn-primary">Edit</a>
-                                        <form action="{{ route('admin.room.destroy', $r->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
+                                        <div class="row">
+                                            <div class="col">
+                                                <a href="{{ route('admin.room.edit', $r->id) }}" class="btn btn-sm btn-primary"><i data-feather="edit"></i></a>
+                                            </div>
+                                            <div class="col">
+                                                <a href="{{ route('admin.room.show', $r->id) }}" class="btn btn-sm btn-primary"><i data-feather="eye"></i></a>
+                                            </div>
+                                            <div class="col">
+                                                <form action="{{ route('admin.room.destroy', $r->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
 
-                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
+                                                    <button type="submit" class="btn btn-sm btn-danger"><i data-feather="trash"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
 
                                     </td>
                                 </tr>
