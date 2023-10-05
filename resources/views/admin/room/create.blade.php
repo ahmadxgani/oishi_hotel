@@ -37,9 +37,11 @@
                                     </select>
                                 </fieldset>
                             </div>
-                            <div class="col-md-8">
-                                <input type="file" name="photos[]">
-                                <input type="file" name="photos[]">
+                            <div class="col-md-8" id="containerImage">
+                            </div>
+                            <div>
+                                <button type="button" onclick="append_photo()" class="btn icon btn-primary">Append Photo <i
+                                        data-feather="edit"></i></button>
                             </div>
                             <div class="col-sm-12 d-flex justify-content-end">
                                 <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
@@ -50,4 +52,45 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function append_photo() {
+            const id = (Math.random() + 1).toString(36).substring(7)
+            const container = document.createElement('div');
+            const fileInput = document.createElement('input');
+            const preview = document.createElement('img');
+
+            fileInput.setAttribute('type', 'file')
+            fileInput.setAttribute('id', id)
+            fileInput.setAttribute('name', 'photos[]')
+
+            // preview.width = '70px'
+            // preview.height = '70px'
+            fileInput.onchange = (e) => {
+                const file = fileInput.files[0]
+                preview.src = URL.createObjectURL(file)
+                fileInput.setAttribute('hidden', true)
+                preview.setAttribute('widht', '70px')
+                preview.setAttribute('height', '70px')
+            }
+            const buttonClose = document.createElement('button')
+            buttonClose.onclick = () => {
+                document.getElementById(id).remove()
+                buttonClose.remove()
+                preview.remove()
+            }
+
+            const iconClose = document.createElement('i');
+            iconClose.className = 'bi bi-x'
+
+            buttonClose.appendChild(iconClose)
+
+            container.appendChild(preview)
+            container.appendChild(fileInput)
+            container.appendChild(buttonClose)
+
+            const containerImage = document.getElementById('containerImage');
+            containerImage.appendChild(container);
+        }
+    </script>
 @endsection

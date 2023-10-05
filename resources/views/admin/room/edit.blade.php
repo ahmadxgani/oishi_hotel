@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
 
+{{-- TODO: deleted photos, new photos, existed/persistent photos --}}
+
 @section('content')
     <div class="card">
         <div class="card-header">

@@ -12,7 +12,7 @@ class Room extends Model
 
     public const TYPE_MAP = [
         "SuperiorKing"  => "Superior King",
-        "Delux"         => "Delux",
+        "Deluxe"         => "Deluxe",
         "SuperiorTwin"  => "Superior Twin"
     ];
 
