@@ -32,13 +32,36 @@
                 </p>
             </div>
             <div class="col-md-5">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-                    preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" /><text x="50%"
-                        y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
-                </svg>
+                <div id="carouselExample" class="carousel slide carousel-fade">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="rounded img-fluid mx-auto"
+                                src="https://pm1.aminoapps.com/8313/3921b6f7910934b0f45ebb45affcb5d07a10a688r1-500-500v2_00.jpg"
+                                alt="Desu">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="rounded img-fluid mx-auto"
+                                src="https://i.pinimg.com/564x/69/c3/be/69c3beb4c5340af60276856bf30a80a3--magical-girl-kawaii-anime.jpg"
+                                alt="Kawai">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
         </div>
 
