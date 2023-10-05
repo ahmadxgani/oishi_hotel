@@ -22,6 +22,7 @@ Pages:
 
 Hotel Feature:
 role receptionist have capability/ability/(or whatever the terms used to describe the functionality) to:
+
 Melayani pemesanan ruangan, tetapi tidak dengan pembayaran [dilakukan onsite]
 
 role admin:
@@ -31,13 +32,20 @@ role guest:
 menyimpan history pemesanan dan tiket
 
 Flow reserve room:
-user fill data form
-print ticket
-bawa ke hotel :v
-serahkan ke resepsionis :v
-check/validasi ticket :v
-selesai (?)
+
+-   user fill data form
+-   print ticket
+-   bawa ke hotel :v
+-   serahkan ke resepsionis :v
+-   check/validasi ticket :v
+-   selesai (?)
 
 although this project isn't perfect for real world case, but at least meet the criteria specified in the Kemendikbudristek's document
 
 Resource assets hotel bisa di dapatkan di photo-photo yang ada pada web traveloka
+
+Pertimbangan:
+
+-   Apakah field harga ruangan per malam perlu di pindahkan ke table type room (?)
+    -   karena pada umumnya harga ruangan di klasifikasikan atau di tentukan berdasarkan tipe ruangan
+    -   jadi mungkin kolom tipe ruangan pada tabel room dibuat tabelnya secara independen saja.
