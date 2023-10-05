@@ -38,3 +38,5 @@ check/validasi ticket :v
 selesai (?)
 
 although this project isn't perfect for real world case, but at least meet the criteria specified in the Kemendikbudristek's document
+
+Resource assets hotel bisa di dapatkan di photo-photo yang ada pada web traveloka
