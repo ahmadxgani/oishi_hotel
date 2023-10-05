@@ -33,6 +33,7 @@ Route::get('/receptionist', function () {
 Route::prefix('dashboard')->name('admin.')->group(function () {
     Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('analytic');
     Route::resource('room', App\Http\Controllers\RoomController::class);
+    Route::resource('facility', App\Http\Controllers\FacilityController::class);
 });
 
 Auth::routes();

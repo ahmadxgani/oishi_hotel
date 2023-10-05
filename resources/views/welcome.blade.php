@@ -17,12 +17,17 @@
             <div class="container-fluid py-5">
                 <h1 class="display-5 fw-bold">Oishi Hotel</h1>
                 <div class="row justify-content-between">
-                    <p class="col-md-8 fs-4">
-                        The perfect place to stay for lovers of Japanese culture and entertainment, especially those who
-                        are "wibu." With a very seductive design and a theme centered on everything
-                        related to anime, manga, and Japanese pop culture, Oishi Hotel will make you feel like you're in
-                        the world of your favorite anime.
-                    </p>
+                    <div class="col-md-8 fs-4">
+                        <p>
+                            The perfect place to stay for lovers of Japanese culture and entertainment, especially those
+                            who
+                            are "wibu." With a very seductive design and a theme centered on everything
+                            related to anime, manga, and Japanese pop culture, Oishi Hotel will make you feel like
+                            you're in
+                            the world of your favorite anime.
+                        </p>
+                        <a class="btn btn-lg btn-primary" href="{{ route('register') }}">Register Now!</a>
+                    </div>
 
                     <div class="col d-flex flex-column">
                         <img src="{{ asset('/images/logo.png') }}" class="align-self-end"

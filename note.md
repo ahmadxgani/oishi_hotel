@@ -9,7 +9,7 @@ Todo:
 -   add detail room page contain related information about room
     -   display as card
     -   add [overlay](https://imagekit.io/blog/css-image-overlay/) container for handle preview images (?)
-    -   like traveloka does, [codepen reference](https://codepen.io/phillipharding/pen/QQGxWq)
+        -   like traveloka does, [codepen reference](https://codepen.io/phillipharding/pen/QQGxWq)
 -   clear unused menu in sidebar [done]
 -   pagination and search room's table
 -   notification feedback on success or error
