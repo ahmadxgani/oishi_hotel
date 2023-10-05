@@ -1,14 +1,15 @@
 Todo:
-[tinggal rapihin style sama layoutnya]
 
--   add input file on the add room page (make it dynamic)
--   preview photo on file
+-   tinggal rapihin style sama layoutnya:
 
-add an ability to delete and add photo on the edit page
-add detail room page contain related information about room
-clear unused menu in sidebar
-pagination and search room's table
-notification feedback on success or error
+    -   add input file on the add room page (make it dynamic)
+    -   preview photo on file
+
+-   add an ability to delete and add photo on the edit page
+-   add detail room page contain related information about room
+-   clear unused menu in sidebar
+-   pagination and search room's table
+-   notification feedback on success or error
 
 Presentation Headline:
 The main function of this web is to provide information related to the hotel and service in booking room
