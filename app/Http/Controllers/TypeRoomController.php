@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\TypeRoom;
 use App\Http\Requests\StoreTypeRoomRequest;
 use App\Http\Requests\UpdateTypeRoomRequest;
+use App\Models\RoomPhoto;
 
 class TypeRoomController extends Controller
 {
@@ -29,15 +30,23 @@ class TypeRoomController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTypeRoomRequest $request)
+    public function store(StoreTypeRoomRequest $r)
     {
-        TypeRoom::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'publish_rate' => $request->publish_rate,
+        $room = TypeRoom::create([
+            'name'          => $r->name,
+            'publish_rate'  => $r->publish_rate,
+            'description'   => $r->description,
         ]);
 
-        redirect()->route('admin.room.index');
+        foreach ($r->file('photos') as $file) {
+            $path = $file->store('public/types_of_room');
+            RoomPhoto::create([
+                'type_room_id' => $room->id,
+                'image'    => $path
+            ]);
+        }
+
+        return redirect()->route('admin.room.index');
     }
 
     /**
@@ -53,15 +62,21 @@ class TypeRoomController extends Controller
      */
     public function edit(TypeRoom $room)
     {
-        //
+        return view('admin.room.edit', compact('room'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTypeRoomRequest $request, TypeRoom $room)
+    public function update(UpdateTypeRoomRequest $r, TypeRoom $room)
     {
-        //
+        $room->update([
+            'publish_rate'  => $r->publish_rate,
+            'description'   => $r->description,
+            'name'          => $r->name,
+        ]);
+
+        return redirect()->route('admin.room.index');
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateTypeRoomRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class UpdateTypeRoomRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return Auth::user()->role === 'admin';
     }
 
     /**
@@ -21,8 +22,11 @@ class UpdateTypeRoomRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = request()->route('room')->id;
         return [
-            //
+            'publish_rate'      => 'required|integer',
+            'description'       => 'required',
+            'name'              => 'required|unique:type_rooms,name,'.$id
         ];
     }
 }

@@ -3,6 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+// use Illuminate\Validation\Rule;
+// use Illuminate\Validation\Rules\File;
 
 class StoreTypeRoomRequest extends FormRequest
 {
@@ -11,7 +14,7 @@ class StoreTypeRoomRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return Auth::user()->role === 'admin';
     }
 
     /**
@@ -22,7 +25,15 @@ class StoreTypeRoomRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name'              => 'required|unique:type_rooms',
+            'description'       => 'required',
+            'publish_rate'      => 'required|integer',
+            'photos'            => 'required',
+            'photos.*'          => 'image',
+            // 'photos.*'          => File::image()
+            //                             ->min(1 * 1024) /** 1 mb */
+            //                             ->max(15 * 1024) /** 5 mb */
+            //                             ->dimensions(Rule::dimensions()->width(500)->height(500)),
         ];
     }
 }
