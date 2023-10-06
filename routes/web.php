@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\TypeRoom;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,7 +20,9 @@ Route::get('/', function () {
 });
 
 Route::get('/rooms', function () {
-    return view('room');
+    $rooms = TypeRoom::all();
+
+    return view('guest.room', compact('rooms'));
 });
 
 Route::get('/facilities', function () {
