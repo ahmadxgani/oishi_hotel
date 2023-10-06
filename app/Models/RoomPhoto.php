@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class RoomPhoto extends Model
 {
     use HasFactory;
-    public $fillable = ['room_id', 'path'];
+    public $fillable = ['type_room_id', 'image'];
 }

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('room_photos', function (Blueprint $table) {
             $table->id();
-            $table->string('path');
-            $table->foreignId('room_id');
+            $table->string('image');
+            $table->foreignId('type_room_id');
             $table->timestamps();
         });
     }
