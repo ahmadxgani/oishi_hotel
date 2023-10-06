@@ -8,11 +8,12 @@ Todo:
 -   add an ability to delete and add photo on the edit page
 -   add detail room page contain related information about room
     -   display as card
-    -   add [overlay](https://imagekit.io/blog/css-image-overlay/) container for handle preview images [Fitur cancelled]
+    -   add [overlay](https://imagekit.io/blog/css-image-overlay/) container for handle preview images [Feature cancelled]
         -   like traveloka does, [codepen reference](https://codepen.io/phillipharding/pen/QQGxWq)
 -   clear unused menu in sidebar [done]
 -   pagination and search room's table
 -   notification feedback on success or error
+-   findout the best google dork keyword for fetch/scraping asset with high quality
 
 Presentation Headline:
 The main function of this web is to provide information related to the hotel and service in booking room
