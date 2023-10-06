@@ -2,7 +2,7 @@ Todo:
 
 -   tinggal rapihin style sama layoutnya:
 
-    -   add input file on the add room page (make it dynamic)
+    -   add input file on the add room page (make it dynamic) [done]
     -   preview photo on file
 
 -   add an ability to delete and add photo on the edit page
