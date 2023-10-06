@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignId('room_id');
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('room_id')->constrained();
             $table->date('date_checkin')->nullable();
             $table->date('date_checkout')->nullable();
             $table->date('date_book_start');
