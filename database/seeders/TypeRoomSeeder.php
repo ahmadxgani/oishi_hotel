@@ -12,7 +12,7 @@ class TypeRoomSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('type_rooms')->insert(
+        $types = [
             [
                 'name' => 'Superior Twin',
                 'description' => "Experience the ultimate comfort and space with our Superior Twin rooms. Designed for those who appreciate both style and functionality, these rooms offer a perfect blend of modern amenities and contemporary design. Whether you're traveling with a friend or family member, our Superior Twin rooms provide two comfortable twin beds, ensuring a peaceful night's sleep. Enjoy the elegant decor and thoughtful touches that make your stay truly memorable, while also relishing in the convenience of our well-appointed facilities. Discover relaxation and convenience at its finest in our Superior Twin rooms.",
@@ -28,6 +28,8 @@ class TypeRoomSeeder extends Seeder
                 'description' => "Experience unparalleled luxury and comfort in our Superior King rooms. These elegantly appointed accommodations offer spacious interiors, a king-sized bed fit for royalty, and a host of modern amenities to ensure your stay is nothing short of extraordinary. Whether you're here for business or leisure, our Superior King rooms provide the perfect sanctuary for relaxation and rejuvenation.",
                 'publish_rate' => 550000
             ],
-        );
+        ];
+
+        DB::table('type_rooms')->insert($types);
     }
 }
