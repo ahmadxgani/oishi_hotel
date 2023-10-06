@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\TypeRoom;
 
 class TypeRoomSeeder extends Seeder
 {
@@ -30,6 +30,8 @@ class TypeRoomSeeder extends Seeder
             ],
         ];
 
-        DB::table('type_rooms')->insert($types);
+        foreach($types as $type) {
+            TypeRoom::create($type);
+        }
     }
 }
