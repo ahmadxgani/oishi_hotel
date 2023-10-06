@@ -1,0 +1,7 @@
+.hide-partially {
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    line-height: 1;
+}

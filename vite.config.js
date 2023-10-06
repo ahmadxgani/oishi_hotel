@@ -7,6 +7,7 @@ export default defineConfig({
             input: [
                 'resources/css/carousel.css',
                 'resources/css/feature.css',
+                'resources/css/room.css',
                 'resources/sass/app.scss',
                 'resources/js/app.js',
             ],
