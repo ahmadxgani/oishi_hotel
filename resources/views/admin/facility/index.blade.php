@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <div class="float-end">
-                        <a href="{{ route('admin.room.create') }}" class="btn btn-primary">Add Room <i
+                        <a href="{{ route('admin.facility.create') }}" class="btn btn-primary">Add Facility <i
                                 data-feather="plus"></i></a>
                     </div>
                 </div>
@@ -45,15 +45,15 @@
                                     <td>
                                         <div class="row">
                                             <div class="col">
-                                                <a href="{{ route('admin.room.edit', $f->id) }}"
+                                                <a href="{{ route('admin.facility.edit', $f->id) }}"
                                                     class="btn btn-sm btn-primary"><i data-feather="edit"></i></a>
                                             </div>
                                             <div class="col">
-                                                <a href="{{ route('admin.room.show', $f->id) }}"
+                                                <a href="{{ route('admin.facility.show', $f->id) }}"
                                                     class="btn btn-sm btn-primary"><i data-feather="eye"></i></a>
                                             </div>
                                             <div class="col">
-                                                <form action="{{ route('admin.room.destroy', $f->id) }}" method="POST">
+                                                <form action="{{ route('admin.facility.destroy', $f->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
 

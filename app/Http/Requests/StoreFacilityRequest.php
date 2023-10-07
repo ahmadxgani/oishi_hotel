@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreFacilityRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class StoreFacilityRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return Auth::user()->role === 'admin';
     }
 
     /**
@@ -22,7 +23,10 @@ class StoreFacilityRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name'              => 'required|unique:facilities',
+            'description'       => 'required',
+            'photos'            => 'required',
+            'photos.*'          => 'image|dimensions:min_width=500,min_height=500',
         ];
     }
 }
