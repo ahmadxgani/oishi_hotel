@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+@vite(['resources/css/hideText.css'])
 
 @section('content')
     <div class="main-content container-fluid">
@@ -39,7 +40,11 @@
                                 <tr>
                                     <td>{{ $f->id }}</td>
                                     <td>{{ $f->name }}</td>
-                                    <td>{{ $f->description }}</td>
+                                    <td>
+                                        <div class="hide-partially" style="width: 500px">
+                                            {{ $f->description }}
+                                        </div>
+                                    </td>
                                     <td>{{ $f->created_at }}</td>
                                     <td>{{ $f->updated_at }}</td>
                                     <td>

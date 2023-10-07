@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@vite(['resources/css/room.css'])
+@vite(['resources/css/hideText.css'])
 
 @section('content')
     <div class="main-content container-fluid">
