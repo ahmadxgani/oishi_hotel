@@ -46,6 +46,7 @@ class TypeRoomController extends Controller
             ]);
         }
 
+        toast('Room successfully added to the record', 'success');
         return redirect()->route('admin.room.index');
     }
 
@@ -76,6 +77,7 @@ class TypeRoomController extends Controller
             'name'          => $r->name,
         ]);
 
+        toast('Room successfully updated', 'success');
         return redirect()->route('admin.room.index');
     }
 
@@ -86,6 +88,7 @@ class TypeRoomController extends Controller
     {
         $room->delete();
 
+        toast('Room successfully deleted', 'success');
         return redirect()->route('admin.room.index');
     }
 }

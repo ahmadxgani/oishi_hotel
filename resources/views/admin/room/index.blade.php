@@ -60,13 +60,8 @@
                                                     class="btn btn-sm btn-primary"><i data-feather="eye"></i></a>
                                             </div>
                                             <div class="col">
-                                                <form action="{{ route('admin.room.destroy', $r->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-
-                                                    <button type="submit" class="btn btn-sm btn-danger"><i
-                                                            data-feather="trash"></i></button>
-                                                </form>
+                                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                                    data-bs-target="#delete"><i data-feather="trash"></i></button>
                                             </div>
                                         </div>
 
@@ -79,5 +74,27 @@
             </div>
 
         </section>
+    </div>
+
+    <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmation</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure want to delete this record?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <form action="{{ route('admin.room.destroy', $r->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
