@@ -28,6 +28,7 @@ if (empty($error)) {
 ?>
 
 <body>
+    <x-toast />
     <div id="app">
         @if (isset($error))
             <script>

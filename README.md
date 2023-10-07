@@ -18,7 +18,6 @@ php artisan ui bootstrap --auth # setup bootstrap for blade template
 npm install && npm run build # install and build bootstrap for production-ready
 ... # setup database and additional configuration
 php artisan storage:link # export asset
-php artisan vendor:publish --tag=laravel-assets --ansi --force
 php artisan key:generate --ansi # generate key
 php artisan serve # run website
 ```

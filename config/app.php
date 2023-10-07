@@ -164,6 +164,7 @@ return [
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
+        App\Providers\NotifServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
@@ -187,4 +188,14 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
     ])->toArray(),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Toast Config
+    |--------------------------------------------------------------------------
+    |
+    | Determine The X and Y position of the toast
+    |
+    */
+
+    'pos_class' => 'bottom-0 end-0 position-fixed',
 ];
