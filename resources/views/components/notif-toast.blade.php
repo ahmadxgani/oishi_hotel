@@ -6,7 +6,6 @@
             <div class="toast fade notif" role="alert" aria-live="assertive" aria-atomic="true"
                 @if (!$item['autohide']) data-autohide="false" @endif>
                 <div class="toast-header">
-                    {{-- todo: store icon and color as array of status --}}
                     <button class="btn {{ $item['style'][$item['level']]['color'] }} btn-sm me-2">
                         <i data-feather="{{ $item['style'][$item['level']]['icon'] }}"></i>
                     </button>
