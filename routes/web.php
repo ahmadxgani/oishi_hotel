@@ -26,7 +26,7 @@ Route::get('/rooms', function () {
 });
 
 Route::get('/facilities', function () {
-    return view('facility');
+    return view('guest.facility');
 });
 
 Route::get('/receptionist', function () {
