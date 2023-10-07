@@ -24,7 +24,7 @@
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <label for="name">Name Type</label>
+                                        <label for="name">Name Facility</label>
                                     </div>
                                     <div class="col-md-8 form-group">
                                         <input required type="text" id="name" class="form-control" name="name">
