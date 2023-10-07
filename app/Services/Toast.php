@@ -11,7 +11,7 @@ class Toast implements \ArrayAccess
     public $message;
 
     /**
-     * Level of the toast: informantion | warning | error
+     * Level of the toast: informantion | success | warning | error
      * @var string
      */
     public $level = 'information';
@@ -24,6 +24,10 @@ class Toast implements \ArrayAccess
         'warning' => [
             'icon' => 'alert-triangle',
             'color' => 'btn-warning',
+        ],
+        'success' => [
+            'icon' => 'check-circle',
+            'color' => 'btn-success',
         ],
         'information' => [
             'icon' => 'alert-circle',
