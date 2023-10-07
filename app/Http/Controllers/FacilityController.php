@@ -84,6 +84,9 @@ class FacilityController extends Controller
      */
     public function destroy(Facility $facility)
     {
-        //
+        $facility->delete();
+
+        toast('Facility successfully deleted', 'success');
+        return redirect()->route('admin.facility.index');
     }
 }
