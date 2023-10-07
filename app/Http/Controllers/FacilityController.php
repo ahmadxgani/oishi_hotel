@@ -62,15 +62,21 @@ class FacilityController extends Controller
      */
     public function edit(Facility $facility)
     {
-        //
+        return view('admin.facility.edit', compact('facility'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateFacilityRequest $request, Facility $facility)
+    public function update(UpdateFacilityRequest $r, Facility $facility)
     {
-        //
+        $facility->update([
+            'description'   => $r->description,
+            'name'          => $r->name,
+        ]);
+
+        toast('Facility successfully updated', 'success');
+        return redirect()->route('admin.facility.index');
     }
 
     /**

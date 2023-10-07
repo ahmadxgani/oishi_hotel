@@ -12,7 +12,7 @@ Todo:
         -   like traveloka does, [codepen reference](https://codepen.io/phillipharding/pen/QQGxWq)
 -   clear unused menu in sidebar [done]
 -   pagination and search room's table
--   notification feedback on success or error
+-   notification feedback on success or error [done]
 -   findout the best google dork keyword for fetch/scraping asset with high quality
 -   seperate notif provider to [different package](https://www.youtube.com/watch?v=ivrc1ZKFgHI&list=PLpzy7FIRqpGBQ_aqz_hXDBch1aAA-lmgu&ab_channel=Coder%27sTape) [low priority]
 

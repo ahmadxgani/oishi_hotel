@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateFacilityRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class UpdateFacilityRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return Auth::user()->role === 'admin';
     }
 
     /**
@@ -21,8 +22,10 @@ class UpdateFacilityRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = request()->route('facility')->id;
         return [
-            //
+            'description'       => 'required',
+            'name'              => 'required|unique:facilities,name,'.$id
         ];
     }
 }
