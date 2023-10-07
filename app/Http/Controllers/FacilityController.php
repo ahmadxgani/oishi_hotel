@@ -54,7 +54,7 @@ class FacilityController extends Controller
      */
     public function show(Facility $facility)
     {
-        //
+        return view('admin.facility.detail', compact('facility'));
     }
 
     /**
