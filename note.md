@@ -14,6 +14,7 @@ Todo:
 -   pagination and search room's table
 -   notification feedback on success or error
 -   findout the best google dork keyword for fetch/scraping asset with high quality
+-   seperate notif provider to [different package](https://www.youtube.com/watch?v=ivrc1ZKFgHI&list=PLpzy7FIRqpGBQ_aqz_hXDBch1aAA-lmgu&ab_channel=Coder%27sTape) [low priority]
 
 Presentation Headline:
 The main function of this web is to provide information related to the hotel and service in booking room
