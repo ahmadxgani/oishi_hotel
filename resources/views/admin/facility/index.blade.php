@@ -27,35 +27,33 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>No Room</th>
-                                <th>Publish Rate</th>
-                                <th>Type Room</th>
+                                <th>Name</th>
+                                <th>Description</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($rooms as $r)
+                            @foreach ($facilities as $f)
                                 <tr>
-                                    <td>{{ $r->id }}</td>
-                                    <td>{{ $r->no_room }}</td>
-                                    <td>{{ $r->publish_rate }}</td>
-                                    <td>{{ $r->type() }}</td>
-                                    <td>{{ $r->created_at }}</td>
-                                    <td>{{ $r->updated_at }}</td>
+                                    <td>{{ $f->id }}</td>
+                                    <td>{{ $f->name }}</td>
+                                    <td>{{ $f->description }}</td>
+                                    <td>{{ $f->created_at }}</td>
+                                    <td>{{ $f->updated_at }}</td>
                                     <td>
                                         <div class="row">
                                             <div class="col">
-                                                <a href="{{ route('admin.room.edit', $r->id) }}"
+                                                <a href="{{ route('admin.room.edit', $f->id) }}"
                                                     class="btn btn-sm btn-primary"><i data-feather="edit"></i></a>
                                             </div>
                                             <div class="col">
-                                                <a href="{{ route('admin.room.show', $r->id) }}"
+                                                <a href="{{ route('admin.room.show', $f->id) }}"
                                                     class="btn btn-sm btn-primary"><i data-feather="eye"></i></a>
                                             </div>
                                             <div class="col">
-                                                <form action="{{ route('admin.room.destroy', $r->id) }}" method="POST">
+                                                <form action="{{ route('admin.room.destroy', $f->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
 

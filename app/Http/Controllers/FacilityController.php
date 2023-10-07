@@ -14,9 +14,9 @@ class FacilityController extends Controller
      */
     public function index()
     {
-        $rooms = Room::all();
+        $facilities = Facility::all();
 
-        return view('admin.facility.index', compact('rooms'));
+        return view('admin.facility.index', compact('facilities'));
     }
 
     /**
