@@ -29,7 +29,7 @@ class StoreTypeRoomRequest extends FormRequest
             'description'       => 'required',
             'publish_rate'      => 'required|integer',
             'photos'            => 'required',
-            'photos.*'          => 'image',
+            'photos.*'          => 'image|dimensions:min_width=500,min_height=500',
             // 'photos.*'          => File::image()
             //                             ->min(1 * 1024) /** 1 mb */
             //                             ->max(15 * 1024) /** 5 mb */
