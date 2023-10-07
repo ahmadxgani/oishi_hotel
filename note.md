@@ -6,9 +6,9 @@ Todo:
     -   preview photo on file
 
 -   add an ability to delete and add photo on the edit page
--   add detail room page contain related information about room
+-   add detail room page contain related information about room [done]
     -   display as card
-    -   add [overlay](https://imagekit.io/blog/css-image-overlay/) container for handle preview images [Feature cancelled]
+    -   add [overlay](https://imagekit.io/blog/css-image-overlay/) container for handle preview images [Feature cancelled, use carousel instead]
         -   like traveloka does, [codepen reference](https://codepen.io/phillipharding/pen/QQGxWq)
 -   clear unused menu in sidebar [done]
 -   pagination and search room's table
@@ -54,3 +54,8 @@ Pertimbangan:
     -   karena pada umumnya harga kamar di klasifikasikan atau di tentukan berdasarkan tipe kamar
     -   jadi mungkin kolom tipe kamar pada tabel room dibuat tabelnya secara independen saja.
     -   dan juga biar harga setiap kamar nya konsisten
+
+commit changes:
+
+-   add feature: added image previews so that users can delete or leave the images they want with certainty on edit room type's page [wip]
+-   remove corespond room photo once room type record deleted [done on `fea39a539a6079dada34e97f301c39e115f78352`]
