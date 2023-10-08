@@ -16,12 +16,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+/**
+ * Available to the public; no need to authenticate
+ */
+
 Route::get('/', function () {
     return view('layouts.welcome');
-});
-
-Route::get('/reserve', function () {
-    return view('guest.reserve');
 });
 
 Route::get('/rooms', function () {
@@ -36,8 +36,8 @@ Route::get('/facilities', function () {
     return view('guest.facility', compact('facilities'));
 });
 
-Route::get('/receptionist', function () {
-    return view('facility');
+Route::get('/reserve', function () {
+    return view('guest.reserve');
 });
 
 Route::prefix('dashboard')->name('admin.')->group(function () {
