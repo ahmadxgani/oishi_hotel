@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form form-horizontal" action="{{ route('admin.type_room.update', $room->id) }}"
+                        <form class="form form-horizontal" action="{{ route('admin.type_room.update', $type_room->id) }}"
                             method="POST">
                             @csrf
                             @method('PATCH')
@@ -30,20 +30,21 @@
                                     </div>
                                     <div class="col-md-8 form-group">
                                         <input required type="text" id="name" class="form-control" name="name"
-                                            value="{{ old('name', $room->name) }}">
+                                            value="{{ old('name', $type_room->name) }}">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="description">Description</label>
                                     </div>
                                     <div class="col-md-8 form-group">
-                                        <textarea name="description" id="description" class="form-control" value="{{ old('description', $room->description) }}">{{ old('description', $room->description) }}</textarea>
+                                        <textarea name="description" id="description" class="form-control"
+                                            value="{{ old('description', $type_room->description) }}">{{ old('description', $type_room->description) }}</textarea>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="publish_rate">Publish Rate</label>
                                     </div>
                                     <div class="col-md-8 form-group">
                                         <input required type="number" id="publish_rate" class="form-control"
-                                            name="publish_rate" value="{{ old('publish_rate', $room->publish_rate) }}">
+                                            name="publish_rate" value="{{ old('publish_rate', $type_room->publish_rate) }}">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="publish_rate">Assets</label>
