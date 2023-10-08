@@ -28,7 +28,8 @@
 
 ## [Misc] List task/todo (low priority):
 
--   [ ] pagination and search table
+-   [x] pagination table
+-   [ ] search table
 -   [ ] add success toast after login/logout
 -   [ ] findout the best google dork keyword for grab/fetch/scrap-ing asset with high quality
 -   [ ] seperate notif provider to [different package](https://www.youtube.com/watch?v=ivrc1ZKFgHI&list=PLpzy7FIRqpGBQ_aqz_hXDBch1aAA-lmgu&ab_channel=Coder%27sTape)

@@ -86,6 +86,9 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <div class="d-flex">
+                        {!! $rooms->links() !!}
+                    </div>
                 </div>
             </div>
 
