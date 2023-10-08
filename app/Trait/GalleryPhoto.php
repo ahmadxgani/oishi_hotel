@@ -14,31 +14,7 @@ trait GalleryPhoto {
         return view('admin.gallery.index', compact('photos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
     // todo: is that possible to use DI in the trait? instead of actual id
-
-    /**
-     * Display the specified resource.
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -61,6 +37,10 @@ trait GalleryPhoto {
      */
     public function destroy($id)
     {
-        //
+        $photo = $this->model::findOrFail($id);
+        $photo->delete();
+
+        toast('Photo successfully deleted', 'success');
+        return back();
     }
 }

@@ -47,7 +47,8 @@
                                     </div>
                                     <div class="col">
                                         <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                                            data-bs-target="#delete-1"><i data-feather="trash"></i></button>
+                                            data-bs-target="#delete-{{ $photo->id }}"><i
+                                                data-feather="trash"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -56,6 +57,31 @@
                                         <code>{{ $photo->created_at }}</code></small></span>
                                 <span class="card-text"><small>updated at
                                         <code>{{ $photo->updated_at }}</code></small></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="delete-{{ $photo->id }}" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmation</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure want to delete this record?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <form
+                                        action="{{ route('admin.gallery.' . request()->segment(3) . '.destroy', $photo->id) }}"
+                                        method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-primary">Delete</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
