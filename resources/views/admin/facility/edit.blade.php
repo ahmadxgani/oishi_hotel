@@ -30,13 +30,14 @@
                                     </div>
                                     <div class="col-md-8 form-group">
                                         <input required type="text" id="name" class="form-control" name="name"
-                                            value="{{ $facility->name }}">
+                                            value="{{ old('name', $facility->name) }}">
                                     </div>
                                     <div class="col-md-4">
                                         <label for="description">Description</label>
                                     </div>
                                     <div class="col-md-8 form-group">
-                                        <textarea name="description" id="description" class="form-control" value="{{ $facility->description }}">{{ $facility->description }}</textarea>
+                                        <textarea name="description" id="description" class="form-control"
+                                            value="{{ old('description', $facility->description) }}">{{ old('description', $facility->description) }}</textarea>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="publish_rate">Assets</label>
