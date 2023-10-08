@@ -53,25 +53,25 @@ class TypeRoomController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TypeRoom $room)
+    public function show(TypeRoom $type_room)
     {
-        return view('admin.type_room.detail', compact('room'));
+        return view('admin.type_room.detail', compact('type_room'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TypeRoom $room)
+    public function edit(TypeRoom $type_room)
     {
-        return view('admin.type_room.edit', compact('room'));
+        return view('admin.type_room.edit', compact('type_room'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTypeRoomRequest $r, TypeRoom $room)
+    public function update(UpdateTypeRoomRequest $r, TypeRoom $type_room)
     {
-        $room->update([
+        $type_room->update([
             'publish_rate'  => $r->publish_rate,
             'description'   => $r->description,
             'name'          => $r->name,
@@ -84,9 +84,9 @@ class TypeRoomController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TypeRoom $room)
+    public function destroy(TypeRoom $type_room)
     {
-        $room->delete();
+        $type_room->delete();
 
         toast('Type Room successfully deleted', 'success');
         return redirect()->route('admin.type_room.index');
