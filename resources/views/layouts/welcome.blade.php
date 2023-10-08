@@ -15,9 +15,9 @@
     <div class="container">
         <div class="p-3 mb-1 bg-body-tertiary rounded-3">
             <div class="container-fluid py-5">
-                <h1 class="display-5 fw-bold">Oishi Hotel</h1>
                 <div class="row justify-content-between">
                     <div class="col-md-8 fs-4">
+                        <h1 class="display-5 fw-bold">Oishi Hotel</h1>
                         <p>
                             The perfect place to stay for lovers of Japanese culture and entertainment, especially those
                             who
@@ -30,8 +30,8 @@
                     </div>
 
                     <div class="col d-flex flex-column">
-                        <img src="{{ asset('/images/logo.png') }}" class="align-self-end"
-                            style="width: 120px;height: 120px;" />
+                        <img src="{{ asset('/images/chibi.png') }}" class="align-self-end"
+                            style="width: 320px;height: 320px;" />
                     </div>
                 </div>
             </div>
