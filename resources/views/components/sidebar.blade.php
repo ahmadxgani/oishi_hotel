@@ -26,6 +26,7 @@ $menus = [
 
                     @foreach ($menu['items'] as $item)
                         <li
+                        {{-- todo: use start with method instead of full path in order to make persistent active tab --}}
                             class="sidebar-item {{ strcmp(Route::currentRouteName(), $item['path']) == 0 ? 'active' : '' }}">
                             <a href="{{ route($item['path']) }}" class='sidebar-link'>
                                 <i data-feather="{{ $item['icon'] }}" width="20"></i>

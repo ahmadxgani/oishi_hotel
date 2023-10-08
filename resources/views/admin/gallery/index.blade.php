@@ -24,72 +24,34 @@
         </div>
         <section class="section">
             <div class="row">
-                <div class="col-4">
-                    <div class="card">
-                        <img src="{{ asset('images/item_2.jpg') }}" class="card-img-top img-fluid"
-                            style="height: 250px;object-fit: cover" alt="...">
-                        <div class="card-body d-flex justify-content-between">
-                            <h4 class="card-title">Category <span class="badge bg-primary">facility</span></h4>
-                            <div class="row">
-                                <div class="col">
-                                    <a href="#" class="btn btn-sm btn-primary"><i data-feather="edit"></i></a>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                                        data-bs-target="#delete-1"><i data-feather="trash"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body d-flex justify-content-between">
-                            <span class="card-text"><small>created at <code>2023-10-07 11:59:52</code></small></span>
-                            <span class="card-text"><small>updated at <code>2023-10-07 11:59:52</code></small></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img src="{{ asset('images/item_2.jpg') }}" class="card-img-top img-fluid"
-                            style="height: 250px;object-fit: cover" alt="...">
-                        <div class="card-body d-flex justify-content-between">
-                            <h4 class="card-title">Category <span class="badge bg-primary">type of room</span></h4>
-                            <div class="row">
-                                <div class="col">
-                                    <a href="#" class="btn btn-sm btn-primary"><i data-feather="edit"></i></a>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                                        data-bs-target="#delete-1"><i data-feather="trash"></i></button>
+                @foreach ($photos as $photo)
+                    <div class="col-4">
+                        <div class="card">
+                            <img src="{{ asset($photo->image) }}" class="card-img-top img-fluid"
+                                style="height: 250px;object-fit: cover" alt="...">
+                            <div class="card-body d-flex justify-content-between">
+                                <h4 class="card-title">Category <span
+                                        class="badge bg-primary text-capitalize">{{ str_replace('_', ' ', request()->segment(3)) }}</span>
+                                </h4>
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="#" class="btn btn-sm btn-primary"><i data-feather="edit"></i></a>
+                                    </div>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                            data-bs-target="#delete-1"><i data-feather="trash"></i></button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-body d-flex justify-content-between">
-                            <span class="card-text"><small>created at <code>2023-10-07 11:59:52</code></small></span>
-                            <span class="card-text"><small>updated at <code>2023-10-07 11:59:52</code></small></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card">
-                        <img src="{{ asset('images/item_2.jpg') }}" class="card-img-top img-fluid"
-                            style="height: 250px;object-fit: cover" alt="...">
-                        <div class="card-body d-flex justify-content-between">
-                            <h4 class="card-title">Category <span class="badge bg-primary">facility</span></h4>
-                            <div class="row">
-                                <div class="col">
-                                    <a href="#" class="btn btn-sm btn-primary"><i data-feather="edit"></i></a>
-                                </div>
-                                <div class="col">
-                                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                                        data-bs-target="#delete-1"><i data-feather="trash"></i></button>
-                                </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span class="card-text"><small>created at
+                                        <code>{{ $photo->created_at }}</code></small></span>
+                                <span class="card-text"><small>updated at
+                                        <code>{{ $photo->updated_at }}</code></small></span>
                             </div>
                         </div>
-                        <div class="card-body d-flex justify-content-between">
-                            <span class="card-text"><small>created at <code>2023-10-07 11:59:52</code></small></span>
-                            <span class="card-text"><small>updated at <code>2023-10-07 11:59:52</code></small></span>
-                        </div>
                     </div>
-                </div>
+                @endforeach
             </div>
         </section>
     </div>

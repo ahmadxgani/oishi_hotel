@@ -1,7 +1,5 @@
 @extends('layouts.dashboard')
 
-{{-- TODO: deleted photos, new photos, existed/persistent photos --}}
-
 @section('content')
     <div class="main-content container-fluid">
         <div class="page-title">

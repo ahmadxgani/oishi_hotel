@@ -45,7 +45,13 @@ Route::prefix('dashboard')->name('admin.')->group(function () {
     Route::resource('type_room', App\Http\Controllers\TypeRoomController::class);
     Route::resource('room', App\Http\Controllers\RoomController::class)->except(['show']);
     Route::resource('facility', App\Http\Controllers\FacilityController::class);
-    Route::resource('gallery', App\Http\Controllers\GalleryController::class);
+    Route::prefix('gallery')->name('gallery.')->group(function () {
+        Route::get('/', function () {
+            return redirect()->route('admin.gallery.type_room.index');
+        })->name('index');
+        Route::resource('type_room', App\Http\Controllers\GalleryTypeRoomController::class);
+        Route::resource('facility', App\Http\Controllers\GalleryFacilityController::class);
+    });
 });
 
 Auth::routes();

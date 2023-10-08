@@ -1,18 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Trait;
 
-use App\Models\FacilityPhoto;
 use Illuminate\Http\Request;
 
-class GalleryController extends Controller
-{
+trait GalleryPhoto {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.gallery.index');
+        $photos = $this->model::all();
+        return view('admin.gallery.index', compact('photos'));
     }
 
     /**
@@ -31,10 +30,12 @@ class GalleryController extends Controller
         //
     }
 
+    // todo: is that possible to use DI in the trait? instead of actual id
+
     /**
      * Display the specified resource.
      */
-    public function show(FacilityPhoto $facilityPhoto)
+    public function show($id)
     {
         //
     }
@@ -42,7 +43,7 @@ class GalleryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(FacilityPhoto $facilityPhoto)
+    public function edit($id)
     {
         //
     }
@@ -50,7 +51,7 @@ class GalleryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, FacilityPhoto $facilityPhoto)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -58,7 +59,7 @@ class GalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(FacilityPhoto $facilityPhoto)
+    public function destroy($id)
     {
         //
     }
