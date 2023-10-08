@@ -16,27 +16,27 @@ class FacilityPhotoSeeder extends Seeder
         $items = [
             [
                 'facility_id'  => 1,
-                'image'         => 'public\images\test_2.jpg'
+                'image'         => 'images\test_2.jpg'
             ],
             [
                 'facility_id'  => 1,
-                'image'         => 'public\images\test_2.jpg'
+                'image'         => 'images\test_2.jpg'
             ],
             [
                 'facility_id'  => 1,
-                'image'         => 'public\images\test_2.jpg'
+                'image'         => 'images\test_2.jpg'
             ],
             [
                 'facility_id'  => 2,
-                'image'         => 'public\images\test_2.jpg'
+                'image'         => 'images\test_2.jpg'
             ],
             [
                 'facility_id'  => 2,
-                'image'         => 'public\images\test_2.jpg'
+                'image'         => 'images\test_2.jpg'
             ],
             [
                 'facility_id'  => 2,
-                'image'         => 'public\images\test_2.jpg'
+                'image'         => 'images\test_2.jpg'
             ],
         ];
 

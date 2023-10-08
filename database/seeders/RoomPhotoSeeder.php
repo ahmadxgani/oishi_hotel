@@ -16,39 +16,39 @@ class RoomPhotoSeeder extends Seeder
         $items = [
             [
                 'type_room_id'  => 1,
-                'image'         => 'public\images\test.jpg'
+                'image'         => 'images\test.jpg'
             ],
             [
                 'type_room_id'  => 1,
-                'image'         => 'public\images\test.jpg'
+                'image'         => 'images\test.jpg'
             ],
             [
                 'type_room_id'  => 1,
-                'image'         => 'public\images\test.jpg'
+                'image'         => 'images\test.jpg'
             ],
             [
                 'type_room_id'  => 2,
-                'image'         => 'public\images\test.jpg'
+                'image'         => 'images\test.jpg'
             ],
             [
                 'type_room_id'  => 2,
-                'image'         => 'public\images\test.jpg'
+                'image'         => 'images\test.jpg'
             ],
             [
                 'type_room_id'  => 2,
-                'image'         => 'public\images\test.jpg'
+                'image'         => 'images\test.jpg'
             ],
             [
                 'type_room_id'  => 3,
-                'image'         => 'public\images\test.jpg'
+                'image'         => 'images\test.jpg'
             ],
             [
                 'type_room_id'  => 3,
-                'image'         => 'public\images\test.jpg'
+                'image'         => 'images\test.jpg'
             ],
             [
                 'type_room_id'  => 3,
-                'image'         => 'public\images\test.jpg'
+                'image'         => 'images\test.jpg'
             ],
         ];
 
