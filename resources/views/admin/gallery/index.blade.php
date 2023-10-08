@@ -13,11 +13,19 @@
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <div class="float-end">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Filter</option>
-                            <option value="1">Facility</option>
-                            <option value="2">Type of Room</option>
-                        </select>
+                        <div class="dropdown">
+                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Filter
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{ route('admin.gallery.facility.index') }}">Facility</a>
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('admin.gallery.type_room.index') }}">Type of
+                                        Room</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
