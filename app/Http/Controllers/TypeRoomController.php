@@ -16,7 +16,7 @@ class TypeRoomController extends Controller
     {
         $rooms = TypeRoom::all();
 
-        return view('admin.room.index', compact('rooms'));
+        return view('admin.type_room.index', compact('rooms'));
     }
 
     /**
@@ -24,7 +24,7 @@ class TypeRoomController extends Controller
      */
     public function create()
     {
-        return view('admin.room.create');
+        return view('admin.type_room.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class TypeRoomController extends Controller
         }
 
         toast('Room successfully added to the record', 'success');
-        return redirect()->route('admin.room.index');
+        return redirect()->route('admin.type_room.index');
     }
 
     /**
@@ -55,7 +55,7 @@ class TypeRoomController extends Controller
      */
     public function show(TypeRoom $room)
     {
-        return view('admin.room.detail', compact('room'));
+        return view('admin.type_room.detail', compact('room'));
     }
 
     /**
@@ -63,7 +63,7 @@ class TypeRoomController extends Controller
      */
     public function edit(TypeRoom $room)
     {
-        return view('admin.room.edit', compact('room'));
+        return view('admin.type_room.edit', compact('room'));
     }
 
     /**
@@ -78,7 +78,7 @@ class TypeRoomController extends Controller
         ]);
 
         toast('Room successfully updated', 'success');
-        return redirect()->route('admin.room.index');
+        return redirect()->route('admin.type_room.index');
     }
 
     /**
@@ -89,6 +89,6 @@ class TypeRoomController extends Controller
         $room->delete();
 
         toast('Room successfully deleted', 'success');
-        return redirect()->route('admin.room.index');
+        return redirect()->route('admin.type_room.index');
     }
 }

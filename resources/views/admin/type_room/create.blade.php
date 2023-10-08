@@ -16,7 +16,7 @@
             <div class="card w-50">
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form form-horizontal" action="{{ route('admin.room.store') }}" method="POST"
+                        <form class="form form-horizontal" action="{{ route('admin.type_room.store') }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="form-body">

@@ -50,8 +50,8 @@
                         <div class="card-body d-flex justify-content-end">
                             <div class="row">
                                 <div class="col">
-                                    <a href="{{ route('admin.room.edit', $room->id) }}" class="btn btn-sm btn-primary"><i
-                                            data-feather="edit"></i></a>
+                                    <a href="{{ route('admin.type_room.edit', $room->id) }}"
+                                        class="btn btn-sm btn-primary"><i data-feather="edit"></i></a>
                                 </div>
                                 <div class="col">
                                     <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
@@ -77,7 +77,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <form action="{{ route('admin.room.destroy', $room->id) }}" method="POST">
+                    <form action="{{ route('admin.type_room.destroy', $room->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-primary">Delete</button>
