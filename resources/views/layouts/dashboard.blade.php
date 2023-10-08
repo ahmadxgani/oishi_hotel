@@ -14,27 +14,17 @@
 
 <?php
 if (is_string($errors)) {
-    $error = $errors;
+    toast($errors, 'error');
 } else {
-    $error = '';
     foreach ($errors->all() as $error) {
-        $error .= "{$error}; ";
+        toast($error, 'error');
     }
-}
-
-if (empty($error)) {
-    unset($error);
 }
 ?>
 
 <body>
     <x-toast />
     <div id="app">
-        @if (isset($error))
-            <script>
-                alert('{{ $error }}')
-            </script>
-        @endif
         @include('components.sidebar')
         <div id="main">
             @include('components.navbar')
