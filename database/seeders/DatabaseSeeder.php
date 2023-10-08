@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
             TypeRoomSeeder::class,
             RoomSeeder::class,
             FacilitySeeder::class,
+            FacilityPhotoSeeder::class,
+            RoomPhotoSeeder::class,
         ]);
     }
 }
