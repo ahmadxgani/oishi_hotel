@@ -1,21 +1,3 @@
-Todo:
-
--   tinggal rapihin style sama layoutnya:
-
-    -   add input file on the add room page (make it dynamic) [done]
-    -   preview photo on file
-
--   add an ability to delete and add photo on the edit page
--   add detail room page contain related information about room [done]
-    -   display as card
-    -   add [overlay](https://imagekit.io/blog/css-image-overlay/) container for handle preview images [Feature cancelled, use carousel instead]
-        -   like traveloka does, [codepen reference](https://codepen.io/phillipharding/pen/QQGxWq)
--   clear unused menu in sidebar [done]
--   pagination and search room's table
--   notification feedback on success or error [done]
--   findout the best google dork keyword for fetch/scraping asset with high quality
--   seperate notif provider to [different package](https://www.youtube.com/watch?v=ivrc1ZKFgHI&list=PLpzy7FIRqpGBQ_aqz_hXDBch1aAA-lmgu&ab_channel=Coder%27sTape) [low priority]
-
 Presentation Headline:
 The main function of this web is to provide information related to the hotel and service in booking room
 
@@ -60,3 +42,13 @@ commit changes:
 
 -   add feature: added image previews so that users can delete or leave the images they want with certainty on edit room type's page [wip]
 -   remove corespond room photo once room type record deleted [done on `fea39a539a6079dada34e97f301c39e115f78352`]
+
+Route auth bawaan `laravel/ui` Starter kit/Scaffold/Boilerplate:
+
+-   login
+-   register
+-   forgot (email blade)
+
+-   reset (from link reset in the email inbox)
+-   confirm (page for something like pre-reset password in the profile, think like a sudo permission XD)
+-   verify (after register redirected into here)
