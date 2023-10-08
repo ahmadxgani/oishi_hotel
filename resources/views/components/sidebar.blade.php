@@ -6,6 +6,7 @@
                 ['name' => 'dashboard', 'icon' => 'home', 'path' => 'admin.analytic'],
                 ['name' => 'rooms & suites', 'icon' => 'layout', 'path' => 'admin.room.index'],
                 ['name' => 'facilities', 'icon' => 'layers', 'path' => 'admin.facility.index'],
+                ['name' => 'gallery', 'icon' => 'image', 'path' => 'admin.gallery.index'],
             ]
         ]
     ];
