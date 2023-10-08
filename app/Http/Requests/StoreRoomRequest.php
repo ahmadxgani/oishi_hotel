@@ -24,8 +24,7 @@ class StoreRoomRequest extends FormRequest
     {
         return [
             'no_room'           => 'required|unique:rooms|integer',
-            'publish_rate'      => 'required|integer',
-            'type'              => 'required|in:Deluxe,SuperiorKing,SuperiorTwin'
+            'type_room'         => 'required|integer'
         ];
     }
 }

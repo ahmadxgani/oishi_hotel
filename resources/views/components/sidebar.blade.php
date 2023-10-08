@@ -2,7 +2,13 @@
 $menus = [
     [
         'section' => 'Main Menu',
-        'items' => [['name' => 'dashboard', 'icon' => 'home', 'path' => 'admin.analytic'], ['name' => 'rooms & suites', 'icon' => 'layout', 'path' => 'admin.type_room.index'], ['name' => 'facilities', 'icon' => 'layers', 'path' => 'admin.facility.index'], ['name' => 'gallery', 'icon' => 'image', 'path' => 'admin.gallery.index']],
+        'items' => [
+            ['name' => 'dashboard', 'icon' => 'home', 'path' => 'admin.analytic'],
+            ['name' => 'types of room', 'icon' => 'layout', 'path' => 'admin.type_room.index'],
+            ['name' => 'facilities', 'icon' => 'layers', 'path' => 'admin.facility.index'],
+            ['name' => 'the total of room', 'icon' => 'home', 'path' => 'admin.room.index'],
+            ['name' => 'gallery', 'icon' => 'image', 'path' => 'admin.gallery.index']
+        ],
     ],
 ];
 ?>

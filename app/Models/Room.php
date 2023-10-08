@@ -4,20 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Room extends Model
 {
     use HasFactory;
-    public $fillable = ['no_room', 'publish_rate', 'type'];
+    public $fillable = ['no_room', 'type_room_id'];
 
-    public const TYPE_MAP = [
-        "SuperiorKing"  => "Superior King",
-        "Deluxe"         => "Deluxe",
-        "SuperiorTwin"  => "Superior Twin"
-    ];
-
-    public function type()
-    {
-        return self::TYPE_MAP[$this->type];
+    public function type_room(): BelongsTo {
+        return $this->belongsTo(TypeRoom::class);
     }
 }
