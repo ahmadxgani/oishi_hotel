@@ -2,6 +2,7 @@
 
 namespace App\Trait;
 
+use App\Models\TypeRoom;
 use Illuminate\Http\Request;
 
 trait GalleryPhoto {
@@ -11,26 +12,11 @@ trait GalleryPhoto {
     public function index()
     {
         $photos = $this->model::all();
-        return view('admin.gallery.index', compact('photos'));
+        $items = $this->type_photo::all();
+        return view('admin.gallery.index', compact('photos', 'items'));
     }
 
     // todo: is that possible to use DI in the trait? instead of actual id
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.
