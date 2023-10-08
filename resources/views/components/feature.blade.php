@@ -11,7 +11,7 @@
                 Experience the ultimate convenience with our 'Reserve Room' feature. Whether you're planning a business
                 trip or a leisurely getaway, booking your ideal room has never been easier.
             </p>
-            <a href="#" class="icon-link">
+            <a href="/reserve" class="icon-link">
                 Booking now
                 <i class="bi bi-chevron-right"></i>
             </a>

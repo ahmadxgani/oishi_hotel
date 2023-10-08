@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('layouts.welcome');
 });
 
+Route::get('/reserve', function () {
+    return view('guest.reserve');
+});
+
 Route::get('/rooms', function () {
     $rooms = TypeRoom::all();
 
