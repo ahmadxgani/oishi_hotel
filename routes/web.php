@@ -43,7 +43,7 @@ Route::get('/reserve', function () {
 Route::prefix('dashboard')->name('admin.')->group(function () {
     Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('analytic');
     Route::resource('type_room', App\Http\Controllers\TypeRoomController::class);
-    Route::resource('room', App\Http\Controllers\RoomController::class);
+    Route::resource('room', App\Http\Controllers\RoomController::class)->except(['show']);
     Route::resource('facility', App\Http\Controllers\FacilityController::class);
     Route::resource('gallery', App\Http\Controllers\GalleryController::class);
 });

@@ -46,12 +46,8 @@
                                     <td>
                                         <div class="row">
                                             <div class="col">
-                                                <a href="{{ route('admin.type_room.edit', $r->id) }}"
+                                                <a href="{{ route('admin.room.edit', $r->id) }}"
                                                     class="btn btn-sm btn-primary"><i data-feather="edit"></i></a>
-                                            </div>
-                                            <div class="col">
-                                                <a href="{{ route('admin.type_room.show', $r->id) }}"
-                                                    class="btn btn-sm btn-primary"><i data-feather="eye"></i></a>
                                             </div>
                                             <div class="col">
                                                 <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
