@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-10-05T23:50:50.599Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="lwTRQv7exdro5xYulqzR" version="22.0.3" type="device">
+<mxfile host="app.diagrams.net" modified="2023-10-07T13:42:59.741Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="3soiWry44VJWOFMxtj1-" version="22.0.4" type="device">
   <diagram name="Page-1" id="umP3yjecLWo_KKQlQwzq">
-    <mxGraphModel dx="2284" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1424" dy="331" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -187,6 +187,9 @@
         </mxCell>
         <mxCell id="cgoCSOiUm6IaWYiiAatw-60" value="" style="ellipse;whiteSpace=wrap;html=1;rounded=1;shadow=0;comic=0;strokeColor=#6c8ebf;strokeWidth=2;fillColor=#dae8fc;fontSize=22;fontColor=#000000;opacity=50;" parent="1" vertex="1">
           <mxGeometry x="290" y="280" width="170" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="47hekKygKmEVQkNgZo3u-1" value="useful article to understand&lt;br&gt;rack-rate or&amp;nbsp;&lt;a href=&quot;https://community.withairbnb.com/t5/Community-Cafe/Inquiries-vs-booking-rates/td-p/1473329&quot;&gt;publish-rate&lt;/a&gt;&amp;nbsp;(tarif/harga kamar per malam)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="935" y="210" width="335" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
