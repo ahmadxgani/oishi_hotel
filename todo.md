@@ -1,20 +1,19 @@
 ## Pre-business logic | [Preparation environment] List task/todo:
 
--   [ ] organize blade template
+-   [x] organize blade template
 -   [ ] routing each user's role to proper dashboard
--   [ ] modify auth behaviour to our needs
+-   [ ] modify auth behaviour to our needs (role and permission)
 
 ## [Domain Guest] List tasks/todo:
 
 -   [x] add detail room page contain related information about room
+-   [ ] replace mock photo with the real one from databases
 
 ## [Domain Admin] List tasks/todo:
 
 -   [ ] grab photo assets and use it in facility and type room seeder
--   [ ] delete related photo on edit
 -   [ ] manage receptionist
--   [ ] replace mock photo on guest page
--   [ ] page gallery, berisi crud assets berbagai jenis tipe photo (facility & type room)
+-   [x] page gallery, berisi crud assets berbagai jenis tipe photo (facility & type room)
 
 ### Available statistic data displayed on dashboard | [reference](https://dribbble.com/shots/11157938-Hotel-Booking-Dashboard/attachments/2761567?mode=media)
 
@@ -36,3 +35,5 @@
 -   [x] handle multiple upload input file on the backend
 -   [x] notification feedback on success or error
 -   [x] clear unused menu in sidebar
+
+Additionally, it can be found in the search file with the keyword `todo:`

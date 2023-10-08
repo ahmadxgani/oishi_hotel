@@ -39,6 +39,7 @@
                                 style="height: 250px;object-fit: cover" alt="...">
                             <div class="card-body d-flex justify-content-between">
                                 <div>
+                                    {{-- todo: does this is a good practice? --}}
                                     <h4 class="card-title">{{ ($photo->facility ?? $photo->type_room)->name }}</h4>
                                     <h6 class="card-subtitle">Category <span
                                             class="badge bg-primary text-capitalize">{{ str_replace('_', ' ', request()->segment(3)) }}</span>
@@ -109,6 +110,7 @@
                                         <div class="mb-3">
                                             <label for="linked_id" class="col-form-label">Choose Room Type</label>
                                             <select name="linked_id" id="linked_id" class="form-select">
+                                                {{-- todo: does this is a good practice? --}}
                                                 @foreach ($items as $i)
                                                     <option value="{{ $i->id }}"
                                                         {{ ($photo->type_room_id ?? $photo->facility_id) == $i->id ? 'selected' : '' }}>
