@@ -22,9 +22,10 @@ class UpdateRoomRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = request()->route('room')->id;
         return [
-            'publish_rate'      => 'required|integer',
-            'type'              => 'required|in:Deluxe,SuperiorKing,SuperiorTwin'
+            'no_room'           => 'required|integer|unique:rooms,no_room,' . $id,
+            'type_room'         => 'required|integer'
         ];
     }
 }

@@ -47,7 +47,8 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-        return view('admin.room.edit', compact('room'));
+        $type_rooms = TypeRoom::all();
+        return view('admin.room.edit', compact('room', 'type_rooms'));
     }
 
     /**
@@ -60,6 +61,7 @@ class RoomController extends Controller
             'type'              => $r->type,
         ]);
 
+        toast('Room successfully updated', 'success');
         return redirect()->route('admin.room.index');
     }
 
@@ -70,6 +72,7 @@ class RoomController extends Controller
     {
         $room->delete();
 
+        toast('Room successfully deleted', 'success');
         return redirect()->route('admin.room.index');
     }
 }
