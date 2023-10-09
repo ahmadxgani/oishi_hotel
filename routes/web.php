@@ -36,7 +36,11 @@ Route::get('/facilities', function () {
     return view('guest.facility', compact('facilities'));
 });
 
-Route::get('/reserve', function () {
+Route::get('dashboard/booking_list', function () {
+    return view('receptionist.index');
+});
+
+Route::get('dashboard/reserve', function () {
     return view('guest.reserve');
 });
 
