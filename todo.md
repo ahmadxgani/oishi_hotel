@@ -2,7 +2,7 @@
 
 -   [x] organize blade template
 -   [ ] routing each user's role to proper dashboard
--   [ ] modify auth behaviour to our needs (role and permission)
+-   [ ] modify auth behaviour to our needs (role and permission) | also there's [some good information](https://stackoverflow.com/questions/65875215/what-is-the-difference-between-middleware-vs-guards-vs-gates-policies-in-laravel) to know
 
 ## [Domain Guest] List tasks/todo:
 
