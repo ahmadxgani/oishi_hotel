@@ -36,16 +36,16 @@ Route::get('/facilities', function () {
     return view('guest.facility', compact('facilities'));
 });
 
-Route::get('dashboard/booking_list', function () {
+Route::get('receptionist/booking_list', function () {
     return view('receptionist.index');
 });
 
-Route::get('dashboard/reserve', function () {
+Route::get('guest/reserve', function () {
     return view('guest.reserve');
 });
 
-Route::prefix('dashboard')->middleware('can:isAdmin')->name('admin.')->group(function () {
-    Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('analytic');
+Route::prefix('admin')->middleware('can:isAdmin')->name('admin.')->group(function () {
+    Route::get('/', [App\Http\Controllers\AnalyticController::class, 'index'])->name('analytic');
     Route::resource('type_room', App\Http\Controllers\TypeRoomController::class);
     Route::resource('room', App\Http\Controllers\RoomController::class)->except(['show']);
     Route::resource('facility', App\Http\Controllers\FacilityController::class);
