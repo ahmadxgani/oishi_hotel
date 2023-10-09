@@ -44,19 +44,17 @@ Route::get('dashboard/reserve', function () {
     return view('guest.reserve');
 });
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::prefix('dashboard')->name('admin.')->group(function () {
-        Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('analytic');
-        Route::resource('type_room', App\Http\Controllers\TypeRoomController::class);
-        Route::resource('room', App\Http\Controllers\RoomController::class)->except(['show']);
-        Route::resource('facility', App\Http\Controllers\FacilityController::class);
-        Route::prefix('gallery')->name('gallery.')->group(function () {
-            Route::get('/', function () {
-                return redirect()->route('admin.gallery.type_room.index');
-            })->name('index');
-            Route::resource('type_room', App\Http\Controllers\GalleryTypeRoomController::class)->only(['index', 'update', 'destroy']);
-            Route::resource('facility', App\Http\Controllers\GalleryFacilityController::class)->only(['index', 'update', 'destroy']);;
-        });
+Route::prefix('dashboard')->middleware('can:isAdmin')->name('admin.')->group(function () {
+    Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('analytic');
+    Route::resource('type_room', App\Http\Controllers\TypeRoomController::class);
+    Route::resource('room', App\Http\Controllers\RoomController::class)->except(['show']);
+    Route::resource('facility', App\Http\Controllers\FacilityController::class);
+    Route::prefix('gallery')->name('gallery.')->group(function () {
+        Route::get('/', function () {
+            return redirect()->route('admin.gallery.type_room.index');
+        })->name('index');
+        Route::resource('type_room', App\Http\Controllers\GalleryTypeRoomController::class)->only(['index', 'update', 'destroy']);
+        Route::resource('facility', App\Http\Controllers\GalleryFacilityController::class)->only(['index', 'update', 'destroy']);;
     });
 });
 
