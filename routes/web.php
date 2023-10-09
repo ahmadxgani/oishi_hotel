@@ -38,11 +38,11 @@ Route::get('/facilities', function () {
 
 Route::get('receptionist/booking_list', function () {
     return view('receptionist.index');
-});
+})->middleware('receptionist');
 
 Route::get('guest/reserve', function () {
     return view('guest.reserve');
-});
+})->middleware('isGuest');
 
 Route::prefix('admin')->middleware('can:isAdmin')->name('admin.')->group(function () {
     Route::get('/', [App\Http\Controllers\AnalyticController::class, 'index'])->name('analytic');
