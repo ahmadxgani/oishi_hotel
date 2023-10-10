@@ -18,6 +18,16 @@ class RoomType extends Model
         return $this->hasMany(RoomPhoto::class);
     }
 
+    public static function getPrice($roomTypeId)
+    {
+        $ret = self::find($roomTypeId);
+        if (!$ret) {
+            return NULL;
+        }
+
+        return $ret->publish_rate;
+    }
+
     protected static function booted ()
     {
         static::deleting(function(RoomType $roomType) {

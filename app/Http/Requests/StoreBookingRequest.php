@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreBookingRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class StoreBookingRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return Auth::user()->role === 'guest';
     }
 
     /**
@@ -25,9 +26,9 @@ class StoreBookingRequest extends FormRequest
             'date_book_start' => 'required|date|after_or_equal:today',
             'date_book_end'   => 'required|date|after:date_book_start',
             'room_type'       => 'required|exists:room_types,id',
-            'nr_adults'       => 'required|number|min:1',
-            'nr_children'     => 'required|number|min:0',
-            'nr_rooms'        => 'required|number|min:1',
+            'nr_adults'       => 'required|integer|min:1',
+            'nr_children'     => 'required|integer|min:0',
+            'nr_rooms'        => 'required|integer|min:1',
         ];
     }
 }
