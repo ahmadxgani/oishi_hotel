@@ -41,9 +41,9 @@ Route::group(['middleware' => 'auth'], function () {
         return view('receptionist.booking_list');
     })->middleware('can:isReceptionist')->name('receptionist.booking_list');
 
-    Route::get('guest/reserve', function () {
-        return view('guest.reserve');
-    })->middleware('can:isGuest')->name('guest.reserve');
+    Route::resource('booking_guest', App\Http\Controllers\BookingGuestController::class)->middleware('can:isGuest');
+
+    Route::resource('booking_receptionist', App\Http\Controllers\BookingReceptionistController::class)->middleware('can:isReceptionist');
 
     Route::prefix('admin')->middleware('can:isAdmin')->name('admin.')->group(function () {
         Route::get('/', [App\Http\Controllers\AnalyticController::class, 'index'])->name('analytic');

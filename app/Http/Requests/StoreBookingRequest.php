@@ -22,7 +22,12 @@ class StoreBookingRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'date_book_start' => 'required|date|after_or_equal:today',
+            'date_book_end'   => 'required|date|after:date_book_start',
+            'room_type'       => 'required|exists:room_types,id',
+            'nr_adults'       => 'required|number|min:1',
+            'nr_children'     => 'required|number|min:0',
+            'nr_rooms'        => 'required|number|min:1',
         ];
     }
 }

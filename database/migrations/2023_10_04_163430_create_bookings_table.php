@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('date_book_start');
             $table->date('date_book_end');
             $table->integer('total_price');
+            $table->enum('status', ['pending', 'verified', 'completed']);
             $table->timestamps();
         });
     }

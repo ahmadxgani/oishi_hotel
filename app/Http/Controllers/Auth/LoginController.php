@@ -45,9 +45,9 @@ class LoginController extends Controller
             case 'admin':
                 return route('admin.analytic');
             case 'receptionist':
-                return route('receptionist.booking_list');
+                return route('booking_receptionist.index');
             case 'guest':
-                return route('guest.reserve');
+                return route('booking_guest.index');
         }
     }
 }
