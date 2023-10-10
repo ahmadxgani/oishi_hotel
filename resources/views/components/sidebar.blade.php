@@ -3,11 +3,13 @@ $menus = [
     [
         'section' => 'Main Menu',
         'items' => [
-            ['name' => 'dashboard', 'icon' => 'home', 'path' => 'admin.analytic'],
-            ['name' => 'types of room', 'icon' => 'layout', 'path' => 'admin.type_room.index'],
-            ['name' => 'facilities', 'icon' => 'layers', 'path' => 'admin.facility.index'],
-            ['name' => 'the total of room', 'icon' => 'home', 'path' => 'admin.room.index'],
-            ['name' => 'gallery', 'icon' => 'image', 'path' => 'admin.gallery.index']
+            ['role' => 'admin', 'name' => 'dashboard', 'icon' => 'home', 'path' => 'admin.analytic'],
+            ['role' => 'admin', 'name' => 'types of room', 'icon' => 'layout', 'path' => 'admin.type_room.index'],
+            ['role' => 'admin', 'name' => 'facilities', 'icon' => 'layers', 'path' => 'admin.facility.index'],
+            ['role' => 'admin', 'name' => 'the total of room', 'icon' => 'home', 'path' => 'admin.room.index'],
+            ['role' => 'admin', 'name' => 'gallery', 'icon' => 'image', 'path' => 'admin.gallery.index'],
+            ['role' => 'receptionist', 'name' => 'Booking List', 'icon' => 'book-open', 'path' => 'admin.gallery.index'],
+            ['role' => 'guest', 'name' => 'Reserve Room', 'icon' => 'briefcase', 'path' => 'admin.gallery.index']
         ],
     ],
 ];
@@ -25,14 +27,15 @@ $menus = [
                     <li class='sidebar-title'>{{ $menu['section'] }}</li>
 
                     @foreach ($menu['items'] as $item)
-                        <li
-                        {{-- todo: use start with method instead of full path in order to make persistent active tab --}}
-                            class="sidebar-item {{ strcmp(Route::currentRouteName(), $item['path']) == 0 ? 'active' : '' }}">
-                            <a href="{{ route($item['path']) }}" class='sidebar-link'>
-                                <i data-feather="{{ $item['icon'] }}" width="20"></i>
-                                <span>{{ ucwords($item['name']) }}</span>
-                            </a>
-                        </li>
+                        @if (Auth::user()->role === $item['role'])
+                            <li {{-- todo: use start with method instead of full path in order to make persistent active tab --}}
+                                class="sidebar-item {{ strcmp(Route::currentRouteName(), $item['path']) == 0 ? 'active' : '' }}">
+                                <a href="{{ route($item['path']) }}" class='sidebar-link'>
+                                    <i data-feather="{{ $item['icon'] }}" width="20"></i>
+                                    <span>{{ ucwords($item['name']) }}</span>
+                                </a>
+                            </li>
+                        @endif
                     @endforeach
                 @endforeach
             </ul>

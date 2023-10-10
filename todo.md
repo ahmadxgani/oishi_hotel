@@ -1,8 +1,8 @@
 ## Pre-business logic | [Preparation environment] List task/todo:
 
 -   [x] organize blade template
--   [ ] routing each user's role to proper dashboard
--   [ ] modify auth behaviour to our needs (role and permission) | also there's [some good information](https://stackoverflow.com/questions/65875215/what-is-the-difference-between-middleware-vs-guards-vs-gates-policies-in-laravel) to know
+-   [x] routing each user's role to proper dashboard, see [stackoverflow](https://stackoverflow.com/questions/77262298/multiple-redirectto-for-multiple-role-in-laravel-scaffolding-ui)
+-   [x] modify auth behaviour to our needs (role and permission) | also there's [some good information](https://stackoverflow.com/questions/65875215/what-is-the-difference-between-middleware-vs-guards-vs-gates-policies-in-laravel) to know
 
 ## [Domain Guest] List tasks/todo:
 

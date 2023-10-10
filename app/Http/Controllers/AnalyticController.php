@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class DashboardController extends Controller
+class AnalyticController extends Controller
 {
     /**
-     * Show the application dashboard.
+     * Show the statistic in form of application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
