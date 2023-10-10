@@ -21,7 +21,12 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
-                    Simple Datatable
+                    <div class="input-group">
+                        <label class="input-group-text" id="search" for="search_item"><i
+                                data-feather="search"></i></label>
+                        <input type="text" class="form-control" id="search_item" placeholder="Search Item"
+                            aria-label="Username" aria-describedby="search">
+                    </div>
                 </div>
                 <div class="card-body">
                     <table class='table table-striped' id="table1">
