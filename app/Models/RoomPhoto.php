@@ -12,6 +12,6 @@ class RoomPhoto extends Model
     public $fillable = ['type_room_id', 'image'];
 
     public function type_room(): BelongsTo {
-        return $this->belongsTo(TypeRoom::class);
+        return $this->belongsTo(RoomType::class);
     }
 }

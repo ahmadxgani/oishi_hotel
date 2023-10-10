@@ -5,24 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Room;
 use App\Http\Requests\StoreRoomRequest;
 use App\Http\Requests\UpdateRoomRequest;
-use App\Models\TypeRoom;
-use App\Trait\SearchItem;
+use App\Models\RoomType;
 
 class RoomController extends Controller
 {
-    /** dunno if this is the correct way or 'best practice' XD */
-    use SearchItem;
-    protected $model = Room::class;
-
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // todo: add support for name instead of querying the ID if the column is a foreign ID.
-        $this->model = $this->search(['type_room_id']);
-        // todo: workaround for error handling
-        $rooms = gettype($this->model) == 'string' ? $this->model::paginate(15) : $this->model->paginate(15);
+        if (isset($_GET["search_item"]) && is_string($_GET["search_item"])) {
+            $rooms = Room::search($_GET["search_item"])->paginate(15)->withQueryString();
+        } else {
+            $rooms = Room::paginate(15);
+        }
 
         return view('admin.room.index', compact('rooms'));
     }
@@ -32,7 +28,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        $type_rooms = TypeRoom::all();
+        $type_rooms = RoomType::all();
         return view('admin.room.create', compact('type_rooms'));
     }
 
@@ -55,7 +51,7 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-        $type_rooms = TypeRoom::all();
+        $type_rooms = RoomType::all();
         return view('admin.room.edit', compact('room', 'type_rooms'));
     }
 

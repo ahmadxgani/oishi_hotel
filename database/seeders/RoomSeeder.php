@@ -16,7 +16,7 @@ class RoomSeeder extends Seeder
         for ($i=1; $i <= 500; $i++) {
             Room::create([
                 'no_room' => $i,
-                'type_room_id' => rand(1, 3)
+                'room_type_id' => rand(1, 3)
             ]);
         }
 

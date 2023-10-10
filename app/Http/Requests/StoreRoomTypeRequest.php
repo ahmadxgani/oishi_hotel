@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 // use Illuminate\Validation\Rule;
 // use Illuminate\Validation\Rules\File;
 
-class StoreTypeRoomRequest extends FormRequest
+class StoreRoomTypeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

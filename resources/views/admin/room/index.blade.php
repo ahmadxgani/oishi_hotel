@@ -47,7 +47,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $r->no_room }}</td>
-                                    <td>{{ $r->type_room->name }}</td>
+                                    <td>{{ $r->room_type()->name }}</td>
                                     <td>{{ $r->created_at }}</td>
                                     <td>{{ $r->updated_at }}</td>
                                     <td>
