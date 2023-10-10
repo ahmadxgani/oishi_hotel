@@ -6,15 +6,22 @@ use App\Models\Room;
 use App\Http\Requests\StoreRoomRequest;
 use App\Http\Requests\UpdateRoomRequest;
 use App\Models\TypeRoom;
+use App\Trait\SearchItem;
 
 class RoomController extends Controller
 {
+    /** dunno if this is the correct way or 'best practice' XD */
+    use SearchItem;
+    protected $model = Room::class;
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $rooms = Room::paginate(15);
+        // todo: add support for name instead of querying the ID if the column is a foreign ID.
+        $this->model = $this->search(['type_room_id']);
+        $rooms = $this->model->paginate(15);
 
         return view('admin.room.index', compact('rooms'));
     }

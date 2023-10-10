@@ -2,9 +2,6 @@
 
 namespace App\Trait;
 
-use App\Models\TypeRoom;
-use Illuminate\Http\Request;
-
 trait GalleryPhoto {
     /**
      * Display a listing of the resource.
