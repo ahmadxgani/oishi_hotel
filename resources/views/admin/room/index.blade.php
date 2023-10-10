@@ -34,7 +34,7 @@
                     <table class='table table-striped' id="table1">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>No</th>
                                 <th>No Room</th>
                                 <th>Type Room</th>
                                 <th>Created At</th>
@@ -45,7 +45,7 @@
                         <tbody>
                             @foreach ($rooms as $r)
                                 <tr>
-                                    <td>{{ $r->id }}</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $r->no_room }}</td>
                                     <td>{{ $r->type_room->name }}</td>
                                     <td>{{ $r->created_at }}</td>
