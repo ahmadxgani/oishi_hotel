@@ -36,25 +36,27 @@ Route::get('/facilities', function () {
     return view('guest.facility', compact('facilities'));
 });
 
-Route::get('receptionist/booking_list', function () {
-    return view('receptionist.booking_list');
-})->middleware('can:isReceptionist')->name('receptionist.booking_list');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('receptionist/booking_list', function () {
+        return view('receptionist.booking_list');
+    })->middleware('can:isReceptionist')->name('receptionist.booking_list');
 
-Route::get('guest/reserve', function () {
-    return view('guest.reserve');
-})->middleware('can:isGuest')->name('guest.reserve');
+    Route::get('guest/reserve', function () {
+        return view('guest.reserve');
+    })->middleware('can:isGuest')->name('guest.reserve');
 
-Route::prefix('admin')->middleware('can:isAdmin')->name('admin.')->group(function () {
-    Route::get('/', [App\Http\Controllers\AnalyticController::class, 'index'])->name('analytic');
-    Route::resource('type_room', App\Http\Controllers\TypeRoomController::class);
-    Route::resource('room', App\Http\Controllers\RoomController::class)->except(['show']);
-    Route::resource('facility', App\Http\Controllers\FacilityController::class);
-    Route::prefix('gallery')->name('gallery.')->group(function () {
-        Route::get('/', function () {
-            return redirect()->route('admin.gallery.type_room.index');
-        })->name('index');
-        Route::resource('type_room', App\Http\Controllers\GalleryTypeRoomController::class)->only(['index', 'update', 'destroy']);
-        Route::resource('facility', App\Http\Controllers\GalleryFacilityController::class)->only(['index', 'update', 'destroy']);;
+    Route::prefix('admin')->middleware('can:isAdmin')->name('admin.')->group(function () {
+        Route::get('/', [App\Http\Controllers\AnalyticController::class, 'index'])->name('analytic');
+        Route::resource('type_room', App\Http\Controllers\TypeRoomController::class);
+        Route::resource('room', App\Http\Controllers\RoomController::class)->except(['show']);
+        Route::resource('facility', App\Http\Controllers\FacilityController::class);
+        Route::prefix('gallery')->name('gallery.')->group(function () {
+            Route::get('/', function () {
+                return redirect()->route('admin.gallery.type_room.index');
+            })->name('index');
+            Route::resource('type_room', App\Http\Controllers\GalleryTypeRoomController::class)->only(['index', 'update', 'destroy']);
+            Route::resource('facility', App\Http\Controllers\GalleryFacilityController::class)->only(['index', 'update', 'destroy']);;
+        });
     });
 });
 
