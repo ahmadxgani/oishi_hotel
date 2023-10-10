@@ -37,12 +37,12 @@ Route::get('/facilities', function () {
 });
 
 Route::get('receptionist/booking_list', function () {
-    return view('receptionist.index');
-})->middleware('can:receptionist');
+    return view('receptionist.booking_list');
+})->middleware('can:isReceptionist')->name('receptionist.booking_list');
 
 Route::get('guest/reserve', function () {
     return view('guest.reserve');
-})->middleware('can:isGuest');
+})->middleware('can:isGuest')->name('guest.reserve');
 
 Route::prefix('admin')->middleware('can:isAdmin')->name('admin.')->group(function () {
     Route::get('/', [App\Http\Controllers\AnalyticController::class, 'index'])->name('analytic');
