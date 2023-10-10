@@ -18,7 +18,7 @@
             <div class="card w-50">
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form form-horizontal" action="{{ route('admin.facility.store') }}" method="POST"
+                        <form class="form form-horizontal" action="{{ route('booking_guest.store') }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="form-body">
@@ -64,6 +64,9 @@
                                     <div class="col-md-8 form-group">
                                         <select class="form-select" name="room_type" id="room_type">
                                             <option>Select room type</option>
+                                            @foreach ($rooms as $r)
+                                                <option value="{{ $r->id }}">{{ $r->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="col-sm-12 d-flex justify-content-end">

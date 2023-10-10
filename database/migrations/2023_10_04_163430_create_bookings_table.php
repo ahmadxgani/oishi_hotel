@@ -18,8 +18,9 @@ return new class extends Migration
             $table->date('date_book_end');
             $table->integer('total_price');
             $table->integer('nr_adults');
+            $table->integer('nr_rooms');
             $table->integer('nr_children');
-            $table->enum('status', ['pending', 'verified', 'completed']);
+            $table->enum('status', ['pending', 'cancelled', 'verified', 'completed']);
             $table->timestamps();
         });
     }

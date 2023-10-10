@@ -17,7 +17,14 @@ class BookingGuestController extends Controller
      */
     public function index()
     {
-        //
+
+        if (isset($_GET["search_item"]) && is_string($_GET["search_item"])) {
+            $bookings = Booking::where('user_id', Auth::user()->id)->search($_GET["search_item"])->paginate(15)->withQueryString();
+        } else {
+            $bookings = Booking::where('user_id', Auth::user()->id)->paginate(15);
+        }
+
+        return view('guest.index', compact('bookings'));
     }
 
     /**
@@ -42,6 +49,7 @@ class BookingGuestController extends Controller
                 "date_book_end"   => $r->date_book_end,
                 "date_book_start" => $r->date_book_start,
                 "nr_adults"       => $r->nr_adults,
+                "nr_rooms"        => $r->nr_rooms,
                 "nr_children"     => $r->nr_children,
                 "total_price"     => 55,
             ]);
