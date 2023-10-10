@@ -28,12 +28,13 @@ class BookingGuestController extends Controller
      */
     public function store(Request $r)
     {
+        $book = Booking::create([
+            "room_id"       => $i,
+            "date_book_end" => $r->,
+            "date_book_start" => $,
+        ]);
         for ($i = 1; $i <= $r->nr_rooms; $i++) {
-            Booking::create([
-                "room_id"       => $i,
-                "date_book_end" => $r->,
-                "date_book_start" => $,
-            ]);
+
         }
     }
 
