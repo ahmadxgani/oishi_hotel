@@ -21,7 +21,8 @@ class RoomController extends Controller
     {
         // todo: add support for name instead of querying the ID if the column is a foreign ID.
         $this->model = $this->search(['type_room_id']);
-        $rooms = $this->model->paginate(15);
+        // todo: workaround for error handling
+        $rooms = gettype($this->model) == 'string' ? $this->model::paginate(15) : $this->model->paginate(15);
 
         return view('admin.room.index', compact('rooms'));
     }
