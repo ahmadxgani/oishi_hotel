@@ -7,9 +7,7 @@
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Booking Room</h3>
                     <p class="text-subtitle text-muted">
-                        Use this feature to easily incorporate a new facility into the system. it's a resource that you can
-                        efficiently input all the necessary information and specifications to
-                        make it accessible and manageable within the system.
+                        ensure a smooth booking experience, user-friendly process, and enables seamless room reservations
                     </p>
                 </div>
             </div>
