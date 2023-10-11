@@ -44,6 +44,21 @@
                 </div>
             </div>
             <div class="row">
+
+                @if ($photos->isEmpty())
+                    <div class="col-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Not Found</h5>
+                                <p class="card-text">
+                                    Sorry, no results found. Please try refining your search criteria or explore other
+                                    options.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+
                 @foreach ($photos as $photo)
                     <div class="col-4">
                         <div class="card">

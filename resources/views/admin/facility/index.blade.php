@@ -43,6 +43,18 @@
                             </tr>
                         </thead>
                         <tbody>
+
+                            @if ($facilities->isEmpty())
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Empty, No data can be displayed</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            @endif
+
                             @foreach ($facilities as $f)
                                 <tr>
                                     <td>{{ $f->id }}</td>
