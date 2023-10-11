@@ -64,11 +64,11 @@
                                     <td>
                                         <div class="row">
                                             <div class="col">
-                                                <a href="{{ route('admin.type_room.edit', 1) }}"
+                                                <a href="{{ route('admin.room_type.edit', 1) }}"
                                                     class="btn btn-sm btn-primary"><i data-feather="edit"></i></a>
                                             </div>
                                             <div class="col">
-                                                <a href="{{ route('admin.type_room.show', 1) }}"
+                                                <a href="{{ route('admin.room_type.show', 1) }}"
                                                     class="btn btn-sm btn-primary"><i data-feather="eye"></i></a>
                                             </div>
                                             <div class="col">
@@ -94,7 +94,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
                                                     data-bs-dismiss="modal">Close</button>
-                                                <form action="{{ route('admin.type_room.destroy', 1) }}" method="POST">
+                                                <form action="{{ route('admin.room_type.destroy', 1) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-primary">Delete</button>

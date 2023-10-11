@@ -6,9 +6,9 @@
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Detail Types of Rooms</h3>
-                    <p class="text-subtitle text-muted">This record created at <code>{{ $type_room->created_at }}</code> and
+                    <p class="text-subtitle text-muted">This record created at <code>{{ $room_type->created_at }}</code> and
                         last
-                        updated at <code>{{ $type_room->updated_at }}</code>.</p>
+                        updated at <code>{{ $room_type->updated_at }}</code>.</p>
                 </div>
             </div>
         </div>
@@ -17,8 +17,8 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-body">
-                            <h4 class="card-title">{{ $type_room->name }}</h4>
-                            <h6 class="card-subtitle">Publish Rate Rp. {{ $type_room->publish_rate }}</h6>
+                            <h4 class="card-title">{{ $room_type->name }}</h4>
+                            <h6 class="card-subtitle">Publish Rate Rp. {{ $room_type->publish_rate }}</h6>
                         </div>
                         <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner">
@@ -45,13 +45,13 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">
-                                {{ $type_room->description }}
+                                {{ $room_type->description }}
                             </p>
                         </div>
                         <div class="card-body d-flex justify-content-end">
                             <div class="row">
                                 <div class="col">
-                                    <a href="{{ route('admin.type_room.edit', $type_room->id) }}"
+                                    <a href="{{ route('admin.room_type.edit', $room_type->id) }}"
                                         class="btn btn-sm btn-primary"><i data-feather="edit"></i></a>
                                 </div>
                                 <div class="col">
@@ -78,7 +78,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <form action="{{ route('admin.type_room.destroy', $type_room->id) }}" method="POST">
+                    <form action="{{ route('admin.room_type.destroy', $room_type->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-primary">Delete</button>

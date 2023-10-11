@@ -25,7 +25,7 @@ class UpdateRoomRequest extends FormRequest
         $id = request()->route('room')->id;
         return [
             'no_room'           => 'required|integer|unique:rooms,no_room,' . $id,
-            'type_room'         => 'required|integer'
+            'room_type'         => 'required|integer'
         ];
     }
 }

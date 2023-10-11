@@ -29,15 +29,15 @@
                                             value="{{ old('no_room') }}">
                                     </div>
                                     <div class="col-md-4">
-                                        <label for="type_room">Type Room</label>
+                                        <label for="room_type">Type Room</label>
                                     </div>
                                     <div class="col-md-8 form-group">
-                                        <select class="form-select" aria-label="Select type room" id="type_room"
-                                            name="type_room">
+                                        <select class="form-select" aria-label="Select type room" id="room_type"
+                                            name="room_type">
                                             <option selected>Select type room</option>
-                                            @foreach ($type_rooms as $tr)
+                                            @foreach ($room_types as $tr)
                                                 <option value="{{ $tr->id }}"
-                                                    {{ old('type_room') ? 'selected' : '' }}>{{ $tr->name }}</option>
+                                                    {{ old('room_type') ? 'selected' : '' }}>{{ $tr->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>

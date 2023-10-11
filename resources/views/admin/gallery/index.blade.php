@@ -22,7 +22,7 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{ route('admin.gallery.facility.index') }}">Facility</a>
                                 </li>
-                                <li><a class="dropdown-item" href="{{ route('admin.gallery.type_room.index') }}">Type of
+                                <li><a class="dropdown-item" href="{{ route('admin.gallery.room_type.index') }}">Type of
                                         Room</a></li>
                             </ul>
                         </div>

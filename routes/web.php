@@ -43,14 +43,14 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::prefix('admin')->middleware('can:isAdmin')->name('admin.')->group(function () {
         Route::get('/', [App\Http\Controllers\AnalyticController::class, 'index'])->name('analytic');
-        Route::resource('type_room', App\Http\Controllers\RoomTypeController::class);
+        Route::resource('room_type', App\Http\Controllers\RoomTypeController::class);
         Route::resource('room', App\Http\Controllers\RoomController::class)->except(['show']);
         Route::resource('facility', App\Http\Controllers\FacilityController::class);
         Route::prefix('gallery')->name('gallery.')->group(function () {
             Route::get('/', function () {
-                return redirect()->route('admin.gallery.type_room.index');
+                return redirect()->route('admin.gallery.room_type.index');
             })->name('index');
-            Route::resource('type_room', App\Http\Controllers\GalleryRoomTypeController::class)->only(['index', 'update', 'destroy']);
+            Route::resource('room_type', App\Http\Controllers\GalleryRoomTypeController::class)->only(['index', 'update', 'destroy']);
             Route::resource('facility', App\Http\Controllers\GalleryFacilityController::class)->only(['index', 'update', 'destroy']);;
         });
     });

@@ -28,8 +28,8 @@ class RoomController extends Controller
      */
     public function create()
     {
-        $type_rooms = RoomType::all();
-        return view('admin.room.create', compact('type_rooms'));
+        $room_types = RoomType::all();
+        return view('admin.room.create', compact('room_types'));
     }
 
     /**
@@ -39,7 +39,7 @@ class RoomController extends Controller
     {
         Room::create([
             'no_room'           => $r->no_room,
-            'room_type_id'      => $r->type_room,
+            'room_type_id'      => $r->room_type,
         ]);
 
         toast('Successfully added a new room', 'success');
@@ -51,8 +51,8 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-        $type_rooms = RoomType::all();
-        return view('admin.room.edit', compact('room', 'type_rooms'));
+        $room_types = RoomType::all();
+        return view('admin.room.edit', compact('room', 'room_types'));
     }
 
     /**

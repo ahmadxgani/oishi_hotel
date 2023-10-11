@@ -16,10 +16,10 @@ class GalleryRoomTypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, RoomPhoto $type_room)
+    public function update(Request $request, RoomPhoto $room_type)
     {
         // todo: validate the request XD
-        $type_room->update([
+        $room_type->update([
             'facility_id' => $request->linked_id
         ]);
 

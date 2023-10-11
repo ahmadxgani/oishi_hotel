@@ -20,7 +20,7 @@ class RoomTypeController extends Controller
             $rooms = RoomType::paginate(15);
         }
 
-        return view('admin.type_room.index', compact('rooms'));
+        return view('admin.room_type.index', compact('rooms'));
     }
 
     /**
@@ -28,7 +28,7 @@ class RoomTypeController extends Controller
      */
     public function create()
     {
-        return view('admin.type_room.create');
+        return view('admin.room_type.create');
     }
 
     /**
@@ -51,48 +51,48 @@ class RoomTypeController extends Controller
         }
 
         toast('Type Room successfully added to the record', 'success');
-        return redirect()->route('admin.type_room.index');
+        return redirect()->route('admin.room_type.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(RoomType $type_room)
+    public function show(RoomType $room_type)
     {
-        return view('admin.type_room.detail', compact('type_room'));
+        return view('admin.room_type.detail', compact('room_type'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(RoomType $type_room)
+    public function edit(RoomType $room_type)
     {
-        return view('admin.type_room.edit', compact('type_room'));
+        return view('admin.room_type.edit', compact('room_type'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRoomTypeRequest $r, RoomType $type_room)
+    public function update(UpdateRoomTypeRequest $r, RoomType $room_type)
     {
-        $type_room->update([
+        $room_type->update([
             'publish_rate'  => $r->publish_rate,
             'description'   => $r->description,
             'name'          => $r->name,
         ]);
 
         toast('Type Room successfully updated', 'success');
-        return redirect()->route('admin.type_room.index');
+        return redirect()->route('admin.room_type.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(RoomType $type_room)
+    public function destroy(RoomType $room_type)
     {
-        $type_room->delete();
+        $room_type->delete();
 
         toast('Type Room successfully deleted', 'success');
-        return redirect()->route('admin.type_room.index');
+        return redirect()->route('admin.room_type.index');
     }
 }

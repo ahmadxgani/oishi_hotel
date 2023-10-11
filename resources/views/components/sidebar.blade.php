@@ -2,16 +2,7 @@
 $menus = [
     [
         'section' => 'Main Menu',
-        'items' => [
-            ['role' => 'admin', 'name' => 'dashboard', 'icon' => 'home', 'path' => 'admin.analytic'],
-            ['role' => 'admin', 'name' => 'types of room', 'icon' => 'layout', 'path' => 'admin.type_room.index'],
-            ['role' => 'admin', 'name' => 'facilities', 'icon' => 'layers', 'path' => 'admin.facility.index'],
-            ['role' => 'admin', 'name' => 'the total of room', 'icon' => 'home', 'path' => 'admin.room.index'],
-            ['role' => 'admin', 'name' => 'gallery', 'icon' => 'image', 'path' => 'admin.gallery.index'],
-            ['role' => 'receptionist', 'name' => 'Booking Management', 'icon' => 'book-open', 'path' => 'admin.gallery.index'],
-            ['role' => 'guest', 'name' => 'Reserve Room', 'icon' => 'briefcase', 'path' => 'booking_guest.create'],
-            ['role' => 'guest', 'name' => 'Booking History', 'icon' => 'archive', 'path' => 'booking_guest.index']
-        ],
+        'items' => [['role' => 'admin', 'name' => 'dashboard', 'icon' => 'home', 'path' => 'admin.analytic'], ['role' => 'admin', 'name' => 'types of room', 'icon' => 'layout', 'path' => 'admin.room_type.index'], ['role' => 'admin', 'name' => 'facilities', 'icon' => 'layers', 'path' => 'admin.facility.index'], ['role' => 'admin', 'name' => 'the total of room', 'icon' => 'home', 'path' => 'admin.room.index'], ['role' => 'admin', 'name' => 'gallery', 'icon' => 'image', 'path' => 'admin.gallery.index'], ['role' => 'receptionist', 'name' => 'Booking Management', 'icon' => 'book-open', 'path' => 'admin.gallery.index'], ['role' => 'guest', 'name' => 'Reserve Room', 'icon' => 'briefcase', 'path' => 'booking_guest.create'], ['role' => 'guest', 'name' => 'Booking History', 'icon' => 'archive', 'path' => 'booking_guest.index']],
     ],
 ];
 ?>
