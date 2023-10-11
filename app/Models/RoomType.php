@@ -32,9 +32,9 @@ class RoomType extends Model
     public static function scopeSearch(Builder $q, $text)
     {
         $q->select(["room_types.*"]);
-        $q->where("room_types.name", 'LIKE', '%' . $text . '%');
-        $q->orWhere("room_types.description", 'LIKE', '%' . $text . '%');
-        $q->orWhere("room_types.publish_rate", 'LIKE', '%' . $text . '%');
+        $q->where("name", 'LIKE', '%' . $text . '%');
+        $q->orWhere("description", 'LIKE', '%' . $text . '%');
+        $q->orWhere("publish_rate", 'LIKE', '%' . $text . '%');
     }
 
     protected static function booted ()

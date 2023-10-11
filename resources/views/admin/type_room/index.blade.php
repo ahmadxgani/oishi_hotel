@@ -44,6 +44,16 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @if ($rooms->isEmpty())
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Empty, No data can be displayed</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            @endif
                             @foreach ($rooms as $r)
                                 <tr>
                                     <td>{{ $r->id }}</td>

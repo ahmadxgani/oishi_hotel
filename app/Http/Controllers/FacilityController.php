@@ -14,7 +14,11 @@ class FacilityController extends Controller
      */
     public function index()
     {
-        $facilities = Facility::all();
+        if (isset($_GET["search_item"]) && is_string($_GET["search_item"])) {
+            $facilities = Facility::search($_GET["search_item"])->paginate(15)->withQueryString();
+        } else {
+            $facilities = Facility::paginate(15);
+        }
 
         return view('admin.facility.index', compact('facilities'));
     }
