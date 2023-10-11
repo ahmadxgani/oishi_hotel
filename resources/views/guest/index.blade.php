@@ -7,14 +7,7 @@
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
                     <h3>Booking History</h3>
-                    <p class="text-subtitle text-muted">We use 'simple-datatables' made by @fiduswriter. You can check the
-                        full documentation <a href="https://github.com/fiduswriter/Simple-DataTables/wiki">here</a>.</p>
-                </div>
-                <div class="col-12 col-md-6 order-md-2 order-first">
-                    <div class="float-end">
-                        <a href="{{ route('admin.room.create') }}" class="btn btn-primary">Add Room <i
-                                data-feather="plus"></i></a>
-                    </div>
+                    <p class="text-subtitle text-muted">Your Booking History, A Record of Your Past Reservations</p>
                 </div>
             </div>
         </div>
@@ -49,14 +42,15 @@
                                     <td>{{ $b->id }}</td>
                                     <td>{{ $b->date_book_start }}</td>
                                     <td>{{ $b->date_book_end }}</td>
-                                    <td>{{ $b->total_price }}</td>
+                                    <td>Rp. {{ $b->total_price }}</td>
                                     <td>{{ $b->nr_rooms }}</td>
-                                    <td>{{ $b->status }}</td>
+                                    <td><span class="badge text-bg-primary">{{ $b->status }}</span></td>
                                     <td>
                                         <div class="row">
                                             <div class="col">
-                                                <a href="#" class="btn btn-sm btn-primary"><i data-feather="eye"></i>
-                                                    Detail</a>
+                                                <a href="{{ route('booking_guest.show', $b->id) }}"
+                                                    class="btn btn-sm btn-primary"><i data-feather="eye"></i>
+                                                    Ticket</a>
                                                 <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
                                                     data-bs-target="#delete-1"><i data-feather="x"></i> Cancel</button>
                                             </div>

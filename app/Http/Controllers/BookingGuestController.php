@@ -38,7 +38,7 @@ class BookingGuestController extends Controller
         return view('guest.reserve', compact('rooms'));
     }
 
-    private function store_booking(Request $r)
+    private function store_booking($r)
     {
         $price = RoomType::getPrice($r->room_type);
         if (!$price) {
@@ -78,7 +78,7 @@ class BookingGuestController extends Controller
      */
     public function store(StoreBookingRequest $r)
     {
-       try {
+        try {
             DB::beginTransaction();
             $this->store_booking($r);
             DB::commit();
@@ -96,7 +96,7 @@ class BookingGuestController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('guest.detail');
     }
 
     /**

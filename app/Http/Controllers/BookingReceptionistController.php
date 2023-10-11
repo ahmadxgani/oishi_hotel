@@ -13,6 +13,7 @@ class BookingReceptionistController extends Controller
      */
     public function index()
     {
+        return view('receptionist.booking_list');
     }
 
     /**

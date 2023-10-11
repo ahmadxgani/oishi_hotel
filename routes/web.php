@@ -37,10 +37,6 @@ Route::get('/facilities', function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('receptionist/booking_list', function () {
-        return view('receptionist.booking_list');
-    })->middleware('can:isReceptionist')->name('receptionist.booking_list');
-
     Route::resource('booking_guest', App\Http\Controllers\BookingGuestController::class)->middleware('can:isGuest');
 
     Route::resource('booking_receptionist', App\Http\Controllers\BookingReceptionistController::class)->middleware('can:isReceptionist');

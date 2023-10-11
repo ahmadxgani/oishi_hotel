@@ -8,7 +8,7 @@ $menus = [
             ['role' => 'admin', 'name' => 'facilities', 'icon' => 'layers', 'path' => 'admin.facility.index'],
             ['role' => 'admin', 'name' => 'the total of room', 'icon' => 'home', 'path' => 'admin.room.index'],
             ['role' => 'admin', 'name' => 'gallery', 'icon' => 'image', 'path' => 'admin.gallery.index'],
-            ['role' => 'receptionist', 'name' => 'Booking List', 'icon' => 'book-open', 'path' => 'admin.gallery.index'],
+            ['role' => 'receptionist', 'name' => 'Booking Management', 'icon' => 'book-open', 'path' => 'admin.gallery.index'],
             ['role' => 'guest', 'name' => 'Reserve Room', 'icon' => 'briefcase', 'path' => 'booking_guest.create'],
             ['role' => 'guest', 'name' => 'Booking History', 'icon' => 'archive', 'path' => 'booking_guest.index']
         ],

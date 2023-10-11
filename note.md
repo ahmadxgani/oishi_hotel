@@ -7,25 +7,46 @@ Pages:
 -   admin | responsible for manage data for web content
 -   receptionist | responsible for serving requests from guests
 
-Hotel Feature:
+Hotel Feature divided into seperated roles:
+
 role receptionist have capability/ability/(or whatever the terms used to describe the functionality) to:
 
-Melayani pemesanan kamar, tetapi tidak dengan pembayaran [dilakukan onsite]
+-   Melayani pemesanan kamar, tetapi tidak dengan pembayaran [dilakukan onsite]
+    -   seperti menangani guest ketika melakukan checkin
 
 role admin:
-mengelola konten web dan menambahkan/register/hire resepsionis
+
+-   mengelola konten web dan menambahkan/register/hire resepsionis
 
 role guest:
-menyimpan history pemesanan dan tiket
 
-Flow reserve room:
+-   menyimpan history pemesanan
 
+    -   dan dapat melihat informasi tentang: status dari pemesanannya, tanggal rentang booking, jumlah orang yang menginap, total harga yang harus dibayar
+
+-   melihat tiket digital dan invoice dari pemesanan yang sedang berlangsung (?)
+
+Flow reserve/booking room:
+
+-   user register an account
+-   verify the email
+-   login with created account
 -   user fill data form
 -   print ticket
 -   accept digital ticket as evidence of reservation to receptionist
     (serahkan ke resepsionis :v)
 -   check/validasi ticket :v
 -   selesai (?)
+
+Overall flow reserve/booking room:
+
+-   guest booking a room on the form page
+-   validate the request and assume the request was valid, then
+-   a new booking record was added into bookings table
+-   guest is now able to go to the hotel and check-in
+-   receptionist take a look into the bookings table
+-   once a guest pay the invoice (offline), then the receptionist set the booking status to paid and mark the check-in date with current time
+-   also receptionist responsible to mark the check-out date too
 
 although this project isn't perfect for real world case, but at least meet the criteria specified in the Kemendikbudristek's document
 
@@ -57,8 +78,8 @@ Rule booking:
 
 -   1 kamar hanya dapat di isi 2 adult dan 2 children
 -   room availability
--   checkin jam 02
--   checkout jam 12
+-   maksimal checkin jam 02
+-   maksimal checkout jam 12
 
 Rule booking item (handled by receptionist):
 
@@ -67,6 +88,7 @@ Rule booking item (handled by receptionist):
 // '2023-10-11'
 // '2023-10-16'
 // check apakah ada data record yang sesuai dengan pengkondisian diantara input yang diberikan
+
 <<<SQL
 SELECT \* FROM bookings WHERE
 (date_book_start BETWEEN '2023-10-14' AND '2023-10-16') OR
@@ -96,19 +118,23 @@ SQL;
 // `pending start` < `start current booked` & `pending end` <= `start current booked`
 // `pending start` < `start current booked` & `pending end` <= `start current booked` (SALAH KARENA END ADA DI RENTANG START DAN END DARI CURRENT BOOKED: LIHAT CASE 2)
 
-// CASE 1: (boleh) (harus tidak muncul yang booking)
-// start: '2023-10-14'; end: '2023-10-15'
+-   CASE 1: (boleh) (harus tidak muncul yang booking)
 
-// CASE 2: (gak boleh) (harus muncul yang terbooking)
-// start: '2023-10-09'; end: '2023-10-13'
+start: '2023-10-14'; end: '2023-10-15'
 
-// CASE 3: (gak boleh) (harus muncul yang terbooking) karena start nya sama
-// start: '2023-10-11'; end: '2023-10-13'
+-   CASE 2: (gak boleh) (harus muncul yang terbooking)
 
-// CASE 4: (boleh) (harus tidak muncul yang booking)
-// start: '2023-10-09'; end: '2023-10-11'
+start: '2023-10-09'; end: '2023-10-13'
 
-<<<SQL
+-   CASE 3: (gak boleh) (harus muncul yang terbooking) karena start nya sama
+
+start: '2023-10-11'; end: '2023-10-13'
+
+-   CASE 4: (boleh) (harus tidak muncul yang booking)
+
+start: '2023-10-09'; end: '2023-10-11'
+
+```sql
 SELECT rooms.id FROM rooms
 LEFT JOIN booking_items ON rooms.id = booking_items.room_id
 LEFT JOIN bookings ON bookings.id = booking_items.booking_id
@@ -119,9 +145,9 @@ WHERE
 -- Rule 1
 ('2023-10-14' >= bookings.date_book_end) OR
 
-    -- Rule 2
-    ('2023-10-14' < bookings.date_book_start AND '2023-10-15' <= bookings.date_book_start)
+-- Rule 2
+('2023-10-14' < bookings.date_book_start AND '2023-10-15' <= bookings.date_book_start)
 
 )
 GROUP BY rooms.id;
-SQL;
+```
