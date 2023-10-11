@@ -94,9 +94,9 @@ class BookingGuestController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Booking $booking_guest)
     {
-        return view('guest.detail');
+        return view('guest.detail', compact('booking_guest'));
     }
 
     /**
