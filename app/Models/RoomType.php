@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Storage;
 
@@ -26,6 +27,14 @@ class RoomType extends Model
         }
 
         return $ret->publish_rate;
+    }
+
+    public static function scopeSearch(Builder $q, $text)
+    {
+        $q->select(["room_types.*"]);
+        $q->where("room_types.name", 'LIKE', '%' . $text . '%');
+        $q->orWhere("room_types.description", 'LIKE', '%' . $text . '%');
+        $q->orWhere("room_types.publish_rate", 'LIKE', '%' . $text . '%');
     }
 
     protected static function booted ()

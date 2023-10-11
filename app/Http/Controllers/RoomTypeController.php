@@ -14,7 +14,11 @@ class RoomTypeController extends Controller
      */
     public function index()
     {
-        $rooms = RoomType::all();
+        if (isset($_GET["search_item"]) && is_string($_GET["search_item"])) {
+            $rooms = RoomType::search($_GET["search_item"])->paginate(15)->withQueryString();
+        } else {
+            $rooms = RoomType::paginate(15);
+        }
 
         return view('admin.type_room.index', compact('rooms'));
     }
