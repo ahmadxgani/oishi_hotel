@@ -37,6 +37,19 @@
                             </tr>
                         </thead>
                         <tbody>
+
+                            @if ($bookings->isEmpty())
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Empty, No data can be displayed</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            @endif
+
                             @foreach ($bookings as $b)
                                 <tr>
                                     <td>{{ $b->id }}</td>
