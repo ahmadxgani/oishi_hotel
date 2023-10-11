@@ -13,7 +13,12 @@ class BookingReceptionistController extends Controller
      */
     public function index()
     {
-        $bookings = Booking::all();
+        if (isset($_GET["search_item"]) && is_string($_GET["search_item"])) {
+            $bookings = Booking::search($_GET["search_item"])->paginate(15)->withQueryString();
+        } else {
+            $bookings = Booking::paginate(15);
+        }
+
         return view('receptionist.booking_list', compact('bookings'));
     }
 

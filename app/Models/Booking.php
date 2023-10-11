@@ -14,7 +14,9 @@ class Booking extends Model
 
     public static function scopeSearch(Builder $q, $name)
     {
-        //
+        $q->select(["bookings.*"]);
+        $q->join("users", "users.id", "bookings.user_id");
+        $q->where("users.name", 'LIKE', '%' . $name . '%');
     }
 
     public function booking_items(): HasMany {
