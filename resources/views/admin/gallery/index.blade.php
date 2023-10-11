@@ -40,7 +40,7 @@
                             <div class="card-body d-flex justify-content-between">
                                 <div>
                                     {{-- todo: does this is a good practice? --}}
-                                    <h4 class="card-title">{{ ($photo->facility ?? $photo->type_room)->name }}</h4>
+                                    <h4 class="card-title">{{ ($photo->facility ?? $photo->room_type)->name }}</h4>
                                     <h6 class="card-subtitle">Category <span
                                             class="badge bg-primary text-capitalize">{{ str_replace('_', ' ', request()->segment(3)) }}</span>
                                     </h6>

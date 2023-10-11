@@ -11,7 +11,7 @@ class RoomPhoto extends Model
     use HasFactory;
     public $fillable = ['type_room_id', 'image'];
 
-    public function type_room(): BelongsTo {
+    public function room_type(): BelongsTo {
         return $this->belongsTo(RoomType::class);
     }
 }
