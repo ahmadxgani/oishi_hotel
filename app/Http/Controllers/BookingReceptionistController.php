@@ -14,7 +14,7 @@ class BookingReceptionistController extends Controller
     public function index()
     {
         if (isset($_GET["search_item"]) && is_string($_GET["search_item"])) {
-            $bookings = Booking::search($_GET["search_item"])->paginate(15)->withQueryString();
+            $bookings = Booking::searchReceptionist($_GET["search_item"])->paginate(15)->withQueryString();
         } else {
             $bookings = Booking::paginate(15);
         }

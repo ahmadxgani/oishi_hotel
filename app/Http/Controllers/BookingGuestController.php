@@ -21,7 +21,7 @@ class BookingGuestController extends Controller
     {
 
         if (isset($_GET["search_item"]) && is_string($_GET["search_item"])) {
-            $bookings = Booking::where('user_id', Auth::user()->id)->search($_GET["search_item"])->paginate(15)->withQueryString();
+            $bookings = Booking::where('user_id', Auth::user()->id)->searchGuest($_GET["search_item"])->paginate(15)->withQueryString();
         } else {
             $bookings = Booking::where('user_id', Auth::user()->id)->paginate(15);
         }

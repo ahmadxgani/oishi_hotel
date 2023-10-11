@@ -12,11 +12,17 @@ class Booking extends Model
     use HasFactory;
     public $fillable = ['user_id', 'date_book_start', 'date_book_end', 'total_price', 'status', 'nr_adults', 'nr_children', 'nr_rooms'];
 
-    public static function scopeSearch(Builder $q, $name)
+    public static function scopeSearchReceptionist(Builder $q, $name)
     {
         $q->select(["bookings.*"]);
         $q->join("users", "users.id", "bookings.user_id");
         $q->where("users.name", 'LIKE', '%' . $name . '%');
+    }
+
+    public static function scopeSearchGuest(Builder $q, $text)
+    {
+        $q->select(["bookings.*"]);
+        $q->where("status", 'LIKE', '%' . $text . '%');
     }
 
     public function booking_items(): HasMany {
