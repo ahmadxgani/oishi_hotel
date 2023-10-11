@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\RoomPhoto;
-use App\Models\TypeRoom;
+use App\Models\RoomType;
 use App\Trait\GalleryPhoto;
 use Illuminate\Http\Request;
 
-class GalleryTypeRoomController extends Controller
+class GalleryRoomTypeController extends Controller
 {
     use GalleryPhoto;
     protected $model = RoomPhoto::class;
-    protected $type_photo = TypeRoom::class;
+    protected $type_photo = RoomType::class;
 
     /**
      * Update the specified resource in storage.

@@ -15,39 +15,39 @@ class RoomPhotoSeeder extends Seeder
         /** TODO: replace with coresponding and variant assets */
         $items = [
             [
-                'type_room_id'  => 1,
+                'room_type_id'  => 1,
                 'image'         => 'images\test.jpg'
             ],
             [
-                'type_room_id'  => 1,
+                'room_type_id'  => 1,
                 'image'         => 'images\test.jpg'
             ],
             [
-                'type_room_id'  => 1,
+                'room_type_id'  => 1,
                 'image'         => 'images\test.jpg'
             ],
             [
-                'type_room_id'  => 2,
+                'room_type_id'  => 2,
                 'image'         => 'images\test.jpg'
             ],
             [
-                'type_room_id'  => 2,
+                'room_type_id'  => 2,
                 'image'         => 'images\test.jpg'
             ],
             [
-                'type_room_id'  => 2,
+                'room_type_id'  => 2,
                 'image'         => 'images\test.jpg'
             ],
             [
-                'type_room_id'  => 3,
+                'room_type_id'  => 3,
                 'image'         => 'images\test.jpg'
             ],
             [
-                'type_room_id'  => 3,
+                'room_type_id'  => 3,
                 'image'         => 'images\test.jpg'
             ],
             [
-                'type_room_id'  => 3,
+                'room_type_id'  => 3,
                 'image'         => 'images\test.jpg'
             ],
         ];

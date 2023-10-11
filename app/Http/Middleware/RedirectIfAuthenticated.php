@@ -25,9 +25,9 @@ class RedirectIfAuthenticated
                     case 'admin':
                         return redirect()->route('admin.analytic');
                     case 'receptionist':
-                        return redirect()->route('receptionist.booking_list');
+                        return redirect()->route('booking_receptionist.index');
                     case 'guest':
-                        return redirect()->route('guest.reserve');
+                        return redirect()->route('booking_guest.index');
                 }
             }
         }

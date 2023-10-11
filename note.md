@@ -52,3 +52,76 @@ Route auth bawaan `laravel/ui` Starter kit/Scaffold/Boilerplate:
 -   reset (from link reset in the email inbox)
 -   confirm (page for something like pre-reset password in the profile, think like a sudo permission XD)
 -   verify (after register redirected into here)
+
+Rule booking:
+
+-   1 kamar hanya dapat di isi 2 adult dan 2 children
+-   room availability
+-   checkin jam 02
+-   checkout jam 12
+
+Rule booking item (handled by receptionist):
+
+-   rentang check-in nya harus diantara rentang booking
+
+// '2023-10-11'
+// '2023-10-16'
+// check apakah ada data record yang sesuai dengan pengkondisian diantara input yang diberikan
+<<<SQL
+SELECT \* FROM bookings WHERE
+(date_book_start BETWEEN '2023-10-14' AND '2023-10-16') OR
+(date_book_end BETWEEN '2023-10-15' AND '2023-10-16') OR
+('2023-10-15' BETWEEN date_book_start AND date_book_end)
+SQL;
+
+// data book start yang ada pada tabel database tidak boleh berada dalam jangkauan $dataStart dan '2023-10-16'
+// begitupun dengan data book end
+
+<<<SQL
+SELECT \* FROM rooms AS r WHERE NOT EXISTS (
+SELECT 1 FROM booking_items
+INNER JOIN bookings ON bookings.id = booking_items.booking_id
+INNER JOIN rooms ON rooms.id = booking_items.room_id
+INNER JOIN room_types ON room_types.id = rooms.room_type_id
+WHERE
+rooms.id = r.id AND
+) AND r.room_type_id = 1
+SQL;
+
+// Terbooking: (start: '2023-10-11'; end: '2023-10-14')
+
+// the rule agar valid untuk dipesan alias ruangan kosong:
+// if NULL then pass OR
+// `pending start` >= `end current booked` OR
+// `pending start` < `start current booked` & `pending end` <= `start current booked`
+// `pending start` < `start current booked` & `pending end` <= `start current booked` (SALAH KARENA END ADA DI RENTANG START DAN END DARI CURRENT BOOKED: LIHAT CASE 2)
+
+// CASE 1: (boleh) (harus tidak muncul yang booking)
+// start: '2023-10-14'; end: '2023-10-15'
+
+// CASE 2: (gak boleh) (harus muncul yang terbooking)
+// start: '2023-10-09'; end: '2023-10-13'
+
+// CASE 3: (gak boleh) (harus muncul yang terbooking) karena start nya sama
+// start: '2023-10-11'; end: '2023-10-13'
+
+// CASE 4: (boleh) (harus tidak muncul yang booking)
+// start: '2023-10-09'; end: '2023-10-11'
+
+<<<SQL
+SELECT rooms.id FROM rooms
+LEFT JOIN booking_items ON rooms.id = booking_items.room_id
+LEFT JOIN bookings ON bookings.id = booking_items.booking_id
+WHERE
+-- Rule 0
+(bookings.date_book_start IS NULL AND bookings.date_book_end IS NULL) OR
+(
+-- Rule 1
+('2023-10-14' >= bookings.date_book_end) OR
+
+    -- Rule 2
+    ('2023-10-14' < bookings.date_book_start AND '2023-10-15' <= bookings.date_book_start)
+
+)
+GROUP BY rooms.id;
+SQL;

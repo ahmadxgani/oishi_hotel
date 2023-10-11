@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Room;
 use App\Http\Requests\StoreRoomRequest;
 use App\Http\Requests\UpdateRoomRequest;
-use App\Models\TypeRoom;
+use App\Models\RoomType;
 
 class RoomController extends Controller
 {
@@ -14,7 +14,11 @@ class RoomController extends Controller
      */
     public function index()
     {
-        $rooms = Room::paginate(15);
+        if (isset($_GET["search_item"]) && is_string($_GET["search_item"])) {
+            $rooms = Room::search($_GET["search_item"])->paginate(15)->withQueryString();
+        } else {
+            $rooms = Room::paginate(15);
+        }
 
         return view('admin.room.index', compact('rooms'));
     }
@@ -24,7 +28,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        $type_rooms = TypeRoom::all();
+        $type_rooms = RoomType::all();
         return view('admin.room.create', compact('type_rooms'));
     }
 
@@ -47,7 +51,7 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-        $type_rooms = TypeRoom::all();
+        $type_rooms = RoomType::all();
         return view('admin.room.edit', compact('room', 'type_rooms'));
     }
 

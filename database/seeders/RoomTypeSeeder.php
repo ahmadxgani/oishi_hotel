@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\TypeRoom;
+use App\Models\RoomType;
 
-class TypeRoomSeeder extends Seeder
+class RoomTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -31,7 +31,7 @@ class TypeRoomSeeder extends Seeder
         ];
 
         foreach($types as $type) {
-            TypeRoom::create($type);
+            RoomType::create($type);
         }
     }
 }

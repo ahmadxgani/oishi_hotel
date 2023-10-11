@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TypeRoom;
-use App\Http\Requests\StoreTypeRoomRequest;
-use App\Http\Requests\UpdateTypeRoomRequest;
+use App\Models\RoomType;
+use App\Http\Requests\StoreRoomTypeRequest;
+use App\Http\Requests\UpdateRoomTypeRequest;
 use App\Models\RoomPhoto;
 
-class TypeRoomController extends Controller
+class RoomTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $rooms = TypeRoom::all();
+        $rooms = RoomType::all();
 
         return view('admin.type_room.index', compact('rooms'));
     }
@@ -30,9 +30,9 @@ class TypeRoomController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTypeRoomRequest $r)
+    public function store(StoreRoomTypeRequest $r)
     {
-        $room = TypeRoom::create([
+        $room = RoomType::create([
             'name'          => $r->name,
             'publish_rate'  => $r->publish_rate,
             'description'   => $r->description,
@@ -53,7 +53,7 @@ class TypeRoomController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TypeRoom $type_room)
+    public function show(RoomType $type_room)
     {
         return view('admin.type_room.detail', compact('type_room'));
     }
@@ -61,7 +61,7 @@ class TypeRoomController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TypeRoom $type_room)
+    public function edit(RoomType $type_room)
     {
         return view('admin.type_room.edit', compact('type_room'));
     }
@@ -69,7 +69,7 @@ class TypeRoomController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTypeRoomRequest $r, TypeRoom $type_room)
+    public function update(UpdateRoomTypeRequest $r, RoomType $type_room)
     {
         $type_room->update([
             'publish_rate'  => $r->publish_rate,
@@ -84,7 +84,7 @@ class TypeRoomController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TypeRoom $type_room)
+    public function destroy(RoomType $type_room)
     {
         $type_room->delete();
 
