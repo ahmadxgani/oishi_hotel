@@ -8,7 +8,11 @@ trait GalleryPhoto {
      */
     public function index()
     {
-        $photos = $this->model::all();
+        if (isset($_GET["search_item"]) && is_string($_GET["search_item"])) {
+            $photos = $this->model::search($_GET["search_item"])->paginate(15)->withQueryString();
+        } else {
+            $photos = $this->model::paginate(15);
+        }
         $items = $this->type_photo::all();
         return view('admin.gallery.index', compact('photos', 'items'));
     }

@@ -38,7 +38,7 @@
                                             <option selected>Select type room</option>
                                             @foreach ($type_rooms as $tr)
                                                 <option value="{{ $tr->id }}"
-                                                    {{ old('type_room') || $tr->id == $room->type_room_id ? 'selected' : '' }}>
+                                                    {{ old('type_room') || $tr->id == $room->room_type_id ? 'selected' : '' }}>
                                                     {{ $tr->name }}</option>
                                             @endforeach
                                         </select>

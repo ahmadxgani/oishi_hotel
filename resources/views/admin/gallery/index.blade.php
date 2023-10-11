@@ -32,6 +32,18 @@
         </div>
         <section class="section">
             <div class="row">
+                <div class="col">
+                    <form>
+                        <div class="input-group">
+                            <label class="input-group-text" id="search" for="search_item"><i
+                                    data-feather="search"></i></label>
+                            <input type="text" class="form-control" id="search_item" name="search_item"
+                                placeholder="Search Item">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
                 @foreach ($photos as $photo)
                     <div class="col-4">
                         <div class="card">
@@ -113,7 +125,7 @@
                                                 {{-- todo: does this is a good practice? --}}
                                                 @foreach ($items as $i)
                                                     <option value="{{ $i->id }}"
-                                                        {{ ($photo->type_room_id ?? $photo->facility_id) == $i->id ? 'selected' : '' }}>
+                                                        {{ ($photo->room_type_id ?? $photo->facility_id) == $i->id ? 'selected' : '' }}>
                                                         {{ $i->name }} </option>
                                                 @endforeach
                                             </select>
@@ -129,6 +141,9 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+            <div class="d-flex">
+                {!! $photos->links() !!}
             </div>
         </section>
     </div>

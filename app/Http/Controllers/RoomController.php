@@ -39,7 +39,7 @@ class RoomController extends Controller
     {
         Room::create([
             'no_room'           => $r->no_room,
-            'type_room_id'      => $r->type_room,
+            'room_type_id'      => $r->type_room,
         ]);
 
         toast('Successfully added a new room', 'success');

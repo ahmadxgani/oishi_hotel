@@ -45,7 +45,7 @@ class RoomTypeController extends Controller
         foreach ($r->file('photos') as $file) {
             $path = $file->store('public/types_of_room');
             RoomPhoto::create([
-                'type_room_id' => $room->id,
+                'room_type_id' => $room->id,
                 'image'    => $path
             ]);
         }
