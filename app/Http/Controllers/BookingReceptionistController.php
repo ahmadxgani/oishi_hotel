@@ -13,7 +13,8 @@ class BookingReceptionistController extends Controller
      */
     public function index()
     {
-        return view('receptionist.booking_list');
+        $bookings = Booking::all();
+        return view('receptionist.booking_list', compact('bookings'));
     }
 
     /**

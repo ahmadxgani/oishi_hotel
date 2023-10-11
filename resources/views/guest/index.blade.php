@@ -30,7 +30,7 @@
                                 <th>ID</th>
                                 <th>Book Start</th>
                                 <th>Book End</th>
-                                <th>Total Price</th>
+                                <th>Invoice</th>
                                 <th>Total Room</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -44,7 +44,9 @@
                                     <td>{{ $b->date_book_end }}</td>
                                     <td>Rp. {{ $b->total_price }}</td>
                                     <td>{{ $b->nr_rooms }}</td>
-                                    <td><span class="badge text-bg-primary">{{ $b->status }}</span></td>
+                                    <td>
+                                        <span class="badge text-bg-primary">{{ $b->status }}</span>
+                                    </td>
                                     <td>
                                         <div class="row">
                                             <div class="col">
