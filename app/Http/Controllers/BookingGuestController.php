@@ -9,7 +9,6 @@ use App\Models\BookingItem;
 use App\Models\Room;
 use App\Models\RoomType;
 use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class BookingGuestController extends Controller
@@ -100,26 +99,12 @@ class BookingGuestController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Booking $booking_guest)
     {
-        //
+        $booking_guest->update(['status' => 'cancelled']);
+        toast('Successfully cancel booking', 'success');
+        return redirect()->route('booking_guest.index');
     }
 }

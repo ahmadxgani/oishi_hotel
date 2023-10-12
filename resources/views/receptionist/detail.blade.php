@@ -19,9 +19,6 @@
                             {{ $booking_receptionist->nr_children }}</p>
                         <div class="row">
                             <div class="col">
-                                <a href="#" class="btn btn-danger">Cancel</a>
-                            </div>
-                            <div class="col">
                                 <button class="btn btn-primary float-end">
                                     {{ $booking_receptionist->booking_items[0]->room->room_type()->name }}
                                 </button>

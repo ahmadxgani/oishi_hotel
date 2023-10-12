@@ -64,45 +64,13 @@
                                     <td>
                                         <div class="row">
                                             <div class="col">
-                                                <a href="{{ route('booking_receptionist.edit', 1) }}"
-                                                    class="btn btn-sm btn-primary"><i data-feather="edit"></i></a>
-                                            </div>
-                                            <div class="col">
                                                 <a href="{{ route('booking_receptionist.show', 1) }}"
-                                                    class="btn btn-sm btn-primary"><i data-feather="eye"></i></a>
-                                            </div>
-                                            <div class="col">
-                                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                                                    data-bs-target="#delete-X"><i data-feather="trash"></i></button>
+                                                    class="btn btn-sm btn-primary"><i data-feather="eye"></i> Detail
+                                                    Ticket</a>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-
-                                <div class="modal fade" id="delete-X" tabindex="-1" aria-labelledby="exampleModalLabel"
-                                    aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmation</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                Are you sure want to delete this record?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Close</button>
-                                                <form action="{{ route('admin.room_type.destroy', 1) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-primary">Delete</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             @endforeach
                         </tbody>
                     </table>

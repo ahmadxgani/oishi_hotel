@@ -37,9 +37,9 @@ Route::get('/facilities', function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('booking_guest', App\Http\Controllers\BookingGuestController::class)->middleware('can:isGuest');
+    Route::resource('booking_guest', App\Http\Controllers\BookingGuestController::class)->middleware('can:isGuest')->except(['update', 'edit']);
 
-    Route::resource('booking_receptionist', App\Http\Controllers\BookingReceptionistController::class)->middleware('can:isReceptionist');
+    Route::resource('booking_receptionist', App\Http\Controllers\BookingReceptionistController::class)->middleware('can:isReceptionist')->only(['index', 'show']);
 
     Route::prefix('admin')->middleware('can:isAdmin')->name('admin.')->group(function () {
         Route::get('/', [App\Http\Controllers\AnalyticController::class, 'index'])->name('analytic');
