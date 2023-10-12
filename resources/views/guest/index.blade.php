@@ -58,7 +58,7 @@
                                     <td>Rp. {{ $b->total_price }}</td>
                                     <td>{{ $b->nr_rooms }}</td>
                                     <td>
-                                        <span class="badge text-bg-primary">{{ $b->status }}</span>
+                                        <span class="badge text-bg-{{ $b->class() }}">{{ $b->status }}</span>
                                     </td>
                                     <td>
                                         <div class="row">

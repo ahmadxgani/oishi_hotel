@@ -56,19 +56,19 @@
                                     <td>{{ $b->id }}</td>
                                     <td>{{ $b->user->name }}</td>
                                     <td>
-                                        <span class="badge text-bg-primary">{{ $b->status }}</span>
+                                        <span class="badge text-bg-{{ $b->class() }}">{{ $b->status }}</span>
                                     </td>
-                                    <td>Invoice ?</td>
+                                    <td>Rp. {{ $b->total_price }}</td>
                                     <td>?</td>
                                     <td>?</td>
                                     <td>
                                         <div class="row">
                                             <div class="col">
-                                                <a href="{{ route('admin.room_type.edit', 1) }}"
+                                                <a href="{{ route('booking_receptionist.edit', 1) }}"
                                                     class="btn btn-sm btn-primary"><i data-feather="edit"></i></a>
                                             </div>
                                             <div class="col">
-                                                <a href="{{ route('admin.room_type.show', 1) }}"
+                                                <a href="{{ route('booking_receptionist.show', 1) }}"
                                                     class="btn btn-sm btn-primary"><i data-feather="eye"></i></a>
                                             </div>
                                             <div class="col">

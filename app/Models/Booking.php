@@ -12,6 +12,22 @@ class Booking extends Model
     use HasFactory;
     public $fillable = ['user_id', 'date_book_start', 'date_book_end', 'total_price', 'status', 'nr_adults', 'nr_children', 'nr_rooms'];
 
+    public const STATUS_COLOR_MAP = [
+        /** on booking */
+        'pending'   => 'secondary',
+        /** on cancel */
+        'cancelled' => 'danger',
+        /** on check in */
+        'verified'  => 'primary',
+        /** on check out */
+        'completed' => 'success'
+    ];
+
+    public function class()
+    {
+        return self::STATUS_COLOR_MAP[$this->status];
+    }
+
     public static function scopeSearchReceptionist(Builder $q, $name)
     {
         $q->select(["bookings.*"]);
