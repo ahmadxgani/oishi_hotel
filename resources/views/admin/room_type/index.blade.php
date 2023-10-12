@@ -87,11 +87,11 @@
                                 </tr>
 
                                 <div class="modal fade" id="delete-{{ $r->id }}" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    aria-labelledby="confirmModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmation</h1>
+                                                <h1 class="modal-title fs-5" id="confirmModalLabel">Confirmation</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
