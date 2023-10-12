@@ -40,7 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('booking_guest', App\Http\Controllers\BookingGuestController::class)->middleware('can:isGuest')->except(['update', 'edit']);
 
     Route::resource('booking_receptionist', App\Http\Controllers\BookingReceptionistController::class)->middleware('can:isReceptionist')->only(['index', 'show']);
-    Route::put('booking_receptionist/{booking_receptionist}/verify}', [App\Http\Controllers\BookingReceptionistController::class, 'verify'])->middleware('can:isReceptionist')->name('booking_receptionist.verify');
+    Route::put('booking_receptionist/{booking_receptionist}/verify', [App\Http\Controllers\BookingReceptionistController::class, 'verify'])->middleware('can:isReceptionist')->name('booking_receptionist.verify');
     Route::put('booking_receptionist/{booking_receptionist}/complete', [App\Http\Controllers\BookingReceptionistController::class, 'complete'])->middleware('can:isReceptionist')->name('booking_receptionist.complete');
 
     Route::prefix('admin')->middleware('can:isAdmin')->name('admin.')->group(function () {

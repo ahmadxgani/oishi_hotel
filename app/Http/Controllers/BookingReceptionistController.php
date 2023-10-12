@@ -26,6 +26,7 @@ class BookingReceptionistController extends Controller
     public function verify(Booking $booking_receptionist)
     {
         $booking_receptionist->update(['status' => 'verified']);
+        $booking_receptionist->booking_items()->update(['date_checkin' => now()]);
         toast('Successfully verify invoice', 'success');
         return redirect()->route('booking_receptionist.index');
     }
@@ -36,6 +37,7 @@ class BookingReceptionistController extends Controller
     public function complete(Booking $booking_receptionist)
     {
         $booking_receptionist->update(['status' => 'completed']);
+        $booking_receptionist->booking_items()->update(['date_checkout' => now()]);
         toast('Successfully checkout', 'success');
         return redirect()->route('booking_receptionist.index');
     }
