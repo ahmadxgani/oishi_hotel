@@ -21,6 +21,16 @@ class BookingReceptionistController extends Controller
     }
 
     /**
+     * Update the specified resource in storage.
+     */
+    public function update(Booking $booking_receptionist)
+    {
+        $booking_receptionist->update(['status' => 'verified']);
+        toast('Successfully verify invoice', 'success');
+        return redirect()->route('booking_receptionist.index');
+    }
+
+    /**
      * Display the specified resource.
      */
     public function show(Booking $booking_receptionist)

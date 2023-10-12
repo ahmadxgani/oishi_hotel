@@ -67,10 +67,40 @@
                                                 <a href="{{ route('booking_receptionist.show', 1) }}"
                                                     class="btn btn-sm btn-primary"><i data-feather="eye"></i> Detail
                                                     Ticket</a>
+                                                <button {{ $b->status !== 'pending' ? 'disabled' : '' }} type="button"
+                                                    class="btn btn-sm btn-dark" data-bs-toggle="modal"
+                                                    data-bs-target="#verify-{{ $b->id }}"><i
+                                                        data-feather="check"></i>
+                                                    Verify</button>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
+                                <div class="modal fade" id="verify-{{ $b->id }}" tabindex="-1"
+                                    aria-labelledby="confirmModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="confirmModalLabel">Confirmation</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure want to verify this request?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <form action="{{ route('booking_receptionist.update', $b->id) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    @method('PUT')
+                                                    <button type="submit" class="btn btn-primary">Verify</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
                         </tbody>
                     </table>
