@@ -26,7 +26,7 @@ class Room extends Model
             WHERE
             rooms.room_type_id = {$roomTypeId} AND
             (bookings.date_book_start IS NULL AND bookings.date_book_end IS NULL) OR
-            -- (bookings.status IS 'cancelled') OR
+            bookings.status = 'cancelled' OR
             (
                 ('{$dateStart}' >= bookings.date_book_end) OR
                 ('{$dateStart}' < bookings.date_book_start AND '{$dateEnd}' <= bookings.date_book_start)
