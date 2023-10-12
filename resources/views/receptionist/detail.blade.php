@@ -17,6 +17,12 @@
                             {{ $booking_receptionist->nr_adults }}</p>
                         <p class="card-text"><i data-feather="users"></i> Number of Children
                             {{ $booking_receptionist->nr_children }}</p>
+                        <p class="card-text">
+                            No room:
+                            @foreach ($booking_receptionist->booking_items as $bi)
+                                <code>{{ $bi->room->no_room }}{{ !$loop->last ? ', ' : '' }}</code>
+                            @endforeach
+                        </p>
                         <div class="row">
                             <div class="col">
                                 <button class="btn btn-primary float-end">

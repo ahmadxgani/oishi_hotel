@@ -66,7 +66,8 @@
                                                 <a href="{{ route('booking_guest.show', $b->id) }}"
                                                     class="btn btn-sm btn-primary"><i data-feather="eye"></i>
                                                     Ticket</a>
-                                                <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                                <button disabled={{ $b->status === 'cancelled' }} type="button"
+                                                    class="btn btn-sm btn-danger" data-bs-toggle="modal"
                                                     data-bs-target="#delete-{{ $b->id }}"><i data-feather="x"></i>
                                                     Cancel</button>
                                             </div>
