@@ -1,3 +1,5 @@
+# ARCHIVED - malah disuruh live koding dong jir :v
+
 ## Praktek Ujikom | Aplikasi Hotel berbasis web
 
 ### Tech stack:
