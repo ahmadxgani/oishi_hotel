@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -70,4 +71,37 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    /**
+     * The user has been authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    // protected function authenticated($_, $user)
+    // {
+    //     dd($user);
+    //     if ($user->role === 'admin') {
+    //         return redirect()->route('admin.analytic');
+    //     } else if ($user->role === 'guest') {
+    //         return redirect()->route('guest.reserve');
+    //     } else if ($user->role === 'receptionist') {
+    //         return redirect()->route('receptionist.booking_list');
+    //     }
+    // }
+
+    // see https://stackoverflow.com/questions/77262298/multiple-redirectto-for-multiple-role-in-laravel-scaffolding-ui?noredirect=1#comment136208885_77262298
+
+    // protected function redirectTo() {
+    //     dd(Auth::user());
+    //     switch (Auth::user()->role) {
+    //         case 'admin':
+    //             return route('admin.analytic');
+    //         case 'receptionist':
+    //             return route('booking_receptionist.index');
+    //         case 'guest':
+    //             return route('booking_guest.index');
+    //     }
+    // }
 }

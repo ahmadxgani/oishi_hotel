@@ -20,7 +20,7 @@
 -   [ ] visitors (pengunjung yang melakukan booking)
 -   [ ] avilable rooms (kamar yang tersisa dari jumlah yang terbooking)
 -   [ ] total rooms (kamar secara keseluruhan)
--   [ ] pending payment
+-   [ ] pending payment/invoice/bill/debt
 -   [ ] total type room
 -   [ ] total users
 -   [ ] jumlah uang yang terkumpul (?)
